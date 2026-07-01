@@ -7,246 +7,38 @@
   <meta name="description" content="CIA SOFT — POS автоматизация ресторанов, кафе и фудкортов в Армении: Poster POS, HDM фискализация, QR оплаты, обучение персонала и поддержка." />
   <meta name="keywords" content="POS Armenia, Poster POS Armenia, HDM Armenia, POS система ресторан, фискализация Армения, CIA SOFT" />
   <style>
-    :root {
-      --green: #123c2f;
-      --green-2: #0b2a21;
-      --gold: #d6a84f;
-      --light: #f7f4ec;
-      --text: #1d1d1d;
-      --muted: #6f756f;
-      --white: #ffffff;
-      --border: #e5dfd2;
-      --soft: #fffaf0;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    header {
-      background: radial-gradient(circle at top right, rgba(214,168,79,.22), transparent 32%), linear-gradient(135deg, var(--green), var(--green-2));
-      color: var(--white);
-      padding: 28px 20px 86px;
-    }
-    .nav, .section, .hero-inner { max-width: 1120px; margin: 0 auto; }
-    .nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-    .logo { font-size: 24px; font-weight: 900; letter-spacing: 0.08em; }
-    .nav a { color: var(--white); text-decoration: none; margin-left: 18px; font-weight: 700; opacity: .9; }
-    .nav a:hover { opacity: 1; }
-    .hero { padding-top: 74px; }
-    .eyebrow { color: var(--gold); font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-    .hero h1 { font-size: clamp(36px, 7vw, 68px); line-height: 1.05; max-width: 900px; margin: 10px 0 24px; }
-    .hero p { font-size: 20px; max-width: 760px; opacity: .92; margin-bottom: 32px; }
-    .buttons { display: flex; flex-wrap: wrap; gap: 14px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 14px 22px; border-radius: 999px; font-weight: 900; text-decoration: none;
-      border: 2px solid transparent; transition: .2s ease;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn.gold { background: var(--gold); color: #1b1305; }
-    .btn.green { background: var(--green); color: var(--white); }
-    .btn.outline { border-color: rgba(255,255,255,.55); color: var(--white); }
-    main { margin-top: -42px; }
-    .card-wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-    .quick-card {
-      background: var(--white); border-radius: 28px; padding: 28px;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
-      box-shadow: 0 18px 50px rgba(18,60,47,.16);
-    }
-    .quick-card div { padding: 18px; background: #fbfaf6; border: 1px solid var(--border); border-radius: 20px; }
-    .quick-card strong { display: block; color: var(--green); font-size: 20px; margin-bottom: 6px; }
-    .section { padding: 72px 20px; }
-    .section h2 { font-size: clamp(30px, 5vw, 46px); line-height: 1.1; margin: 0 0 16px; color: var(--green); }
-    .lead { max-width: 790px; font-size: 18px; color: var(--muted); margin-bottom: 34px; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .service, .price, .about-box, .industry, .why, .faq, .step {
-      background: var(--white); border: 1px solid var(--border); border-radius: 24px; padding: 26px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.04);
-    }
-    .industry { text-align: center; font-weight: 900; color: var(--green); }
-    .industry span { display: block; font-size: 34px; margin-bottom: 8px; }
-    .service h3, .price h3, .why h3, .faq h3, .step h3 { margin: 0 0 10px; color: var(--green); font-size: 22px; }
-    .price .amount { font-size: 34px; font-weight: 900; color: var(--green); margin: 12px 0; }
-    .price ul, .service ul { padding-left: 20px; margin-bottom: 0; }
-    .price.featured { border: 2px solid var(--gold); transform: translateY(-8px); }
-    .badge { display: inline-block; background: rgba(214,168,79,.18); color: #76530f; padding: 6px 12px; border-radius: 999px; font-weight: 900; font-size: 13px; }
-    .about, .steps { background: var(--soft); }
-    .contact-box {
-      background: linear-gradient(135deg, var(--green), var(--green-2)); color: var(--white);
-      border-radius: 28px; padding: 34px; display: flex; justify-content: space-between; gap: 24px; align-items: center;
-    }
-    .contact-box h2 { color: var(--white); margin-bottom: 8px; }
-    .contact-box p { margin: 0; opacity: .9; }
-    .mini-note { font-size: 14px; color: var(--muted); margin-top: 12px; }
-    footer { text-align: center; padding: 34px 20px; color: var(--muted); }
-    .floating-whatsapp {
-      position: fixed; right: 18px; bottom: 18px; z-index: 20;
-      background: #25D366; color: white; padding: 14px 18px; border-radius: 999px;
-      font-weight: 900; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,.22);
-    }
-    @media (max-width: 920px) {
-      .grid-4 { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 820px) {
-      .nav { align-items: flex-start; flex-direction: column; }
-      .nav a { margin-left: 0; margin-right: 14px; display: inline-block; margin-bottom: 8px; }
-      .quick-card, .grid { grid-template-columns: 1fr; }
-      .grid-4 { grid-template-columns: 1fr; }
-      .price.featured { transform: none; }
-      .contact-box { flex-direction: column; align-items: flex-start; }
-      .floating-whatsapp { left: 18px; right: 18px; text-align: center; }
-    }
+    :root{--green:#123c2f;--green2:#0b2a21;--gold:#d6a84f;--blue:#1858c9;--light:#f7f4ec;--text:#1d1d1d;--muted:#6f756f;--white:#fff;--border:#e5dfd2;--soft:#fffaf0;--dark:#071610}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--light);color:var(--text);line-height:1.6}header{background:radial-gradient(circle at top right,rgba(214,168,79,.22),transparent 32%),linear-gradient(135deg,rgba(18,60,47,.96),rgba(7,22,16,.98)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;color:var(--white);padding:26px 20px 88px}.nav,.section,.hero-inner{max-width:1120px;margin:0 auto}.nav{display:flex;justify-content:space-between;align-items:center;gap:20px}.logo{font-size:25px;font-weight:900;letter-spacing:.08em}.logo small{display:block;font-size:10px;letter-spacing:.18em;color:var(--gold)}.nav a{color:var(--white);text-decoration:none;margin-left:16px;font-weight:700;opacity:.9}.nav a:hover{opacity:1}.hero{padding-top:72px}.eyebrow{color:var(--gold);font-weight:900;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-size:clamp(36px,7vw,68px);line-height:1.05;max-width:900px;margin:10px 0 24px}.hero p{font-size:20px;max-width:760px;opacity:.94;margin-bottom:32px}.buttons{display:flex;flex-wrap:wrap;gap:14px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;font-weight:900;text-decoration:none;border:2px solid transparent;transition:.2s ease}.btn:hover{transform:translateY(-2px)}.btn.gold{background:var(--gold);color:#1b1305}.btn.green{background:var(--green);color:var(--white)}.btn.blue{background:var(--blue);color:var(--white)}.btn.outline{border-color:rgba(255,255,255,.55);color:var(--white)}main{margin-top:-42px}.card-wrap{max-width:1120px;margin:0 auto;padding:0 20px}.quick-card{background:rgba(255,255,255,.96);border-radius:28px;padding:26px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;box-shadow:0 18px 50px rgba(18,60,47,.18)}.quick-card div{padding:18px;background:#fbfaf6;border:1px solid var(--border);border-radius:20px}.quick-card strong{display:block;color:var(--green);font-size:24px;margin-bottom:5px}.section{padding:72px 20px}.section h2{font-size:clamp(30px,5vw,46px);line-height:1.1;margin:0 0 16px;color:var(--green)}.lead{max-width:790px;font-size:18px;color:var(--muted);margin-bottom:34px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card,.service,.price,.about-box,.industry,.why,.faq,.step,.case-card,.gallery-card,.form-box{background:var(--white);border:1px solid var(--border);border-radius:24px;padding:26px;box-shadow:0 10px 30px rgba(0,0,0,.04)}.industry{text-align:center;font-weight:900;color:var(--green)}.industry span{display:block;font-size:34px;margin-bottom:8px}.service h3,.price h3,.why h3,.faq h3,.step h3,.case-card h3,.gallery-card h3{margin:0 0 10px;color:var(--green);font-size:22px}.price .amount{font-size:34px;font-weight:900;color:var(--green);margin:12px 0}.price ul,.service ul{padding-left:20px;margin-bottom:0}.price.featured{border:2px solid var(--gold);transform:translateY(-8px)}.badge{display:inline-block;background:rgba(214,168,79,.18);color:#76530f;padding:6px 12px;border-radius:999px;font-weight:900;font-size:13px}.dark{background:linear-gradient(135deg,#071610,#0c2b22);color:var(--white)}.dark h2,.dark h3{color:var(--white)}.dark .lead{color:rgba(255,255,255,.76)}.dark .why{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:var(--white)}.about,.steps{background:var(--soft)}.gallery-card{padding:0;overflow:hidden}.gallery-img{height:170px;background:linear-gradient(135deg,#e9e2d4,#fff);display:flex;align-items:center;justify-content:center;font-size:44px}.gallery-card div:last-child{padding:22px}.case-card{position:relative}.case-tag{display:inline-block;margin-bottom:12px;background:#edf4ff;color:#174b9e;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:900}.contact-box{background:linear-gradient(135deg,var(--green),var(--green2));color:var(--white);border-radius:28px;padding:34px;display:flex;justify-content:space-between;gap:24px;align-items:center}.contact-box h2{color:var(--white);margin-bottom:8px}.contact-box p{margin:0;opacity:.9}.mini-note{font-size:14px;color:var(--muted);margin-top:12px}.form-box input,.form-box select,.form-box textarea{width:100%;padding:14px 16px;border:1px solid var(--border);border-radius:14px;margin-bottom:12px;font:inherit;background:#fff}.form-box textarea{min-height:120px;resize:vertical}.map-box{height:260px;border-radius:24px;background:linear-gradient(135deg,#e8efe9,#fff);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--green);font-weight:900}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:24px;max-width:1120px;margin:0 auto;text-align:left}.footer-dark{background:#071610;color:rgba(255,255,255,.78);padding:42px 20px}.footer-dark a{color:rgba(255,255,255,.78);display:block;text-decoration:none;margin:6px 0}.floating-whatsapp{position:fixed;right:18px;bottom:18px;z-index:20;background:#25D366;color:white;padding:14px 18px;border-radius:999px;font-weight:900;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.22)}@media(max-width:920px){.quick-card,.grid4{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}@media(max-width:820px){.nav{align-items:flex-start;flex-direction:column}.nav a{margin-left:0;margin-right:14px;display:inline-block;margin-bottom:8px}.quick-card,.grid,.grid4,.footer-grid{grid-template-columns:1fr}.price.featured{transform:none}.contact-box{flex-direction:column;align-items:flex-start}.floating-whatsapp{left:18px;right:18px;text-align:center}.section{padding:54px 18px}}
   </style>
 </head>
 <body>
   <header>
     <div class="nav">
-      <div class="logo">CIA SOFT</div>
+      <div class="logo">CIA SOFT<small>RESTAURANT AUTOMATION</small></div>
       <nav>
-        <a href="#services">Услуги</a>
-        <a href="#industries">Для кого</a>
-        <a href="#pricing">Тарифы</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Контакты</a>
+        <a href="#services">Услуги</a><a href="#industries">Для кого</a><a href="#pricing">Тарифы</a><a href="#cases">Кейсы</a><a href="#faq">FAQ</a><a href="#contact">Контакты</a>
       </nav>
     </div>
     <div class="hero hero-inner">
-      <div class="eyebrow">Poster POS • HDM • Support</div>
-      <h1>Автоматизация ресторанов, кафе и фудкортов в Армении</h1>
-      <p>CIA SOFT помогает заведениям быстро внедрить POS систему, фискальные чеки HDM, QR оплаты, отчёты, обучение персонала и техническую поддержку.</p>
-      <div class="buttons">
-        <a class="btn gold" href="tel:+37498615005">Позвонить: 098 61 50 05</a>
-        <a class="btn outline" href="https://wa.me/37498615005">Написать в WhatsApp</a>
-        <a class="btn outline" href="#pricing">Посмотреть тарифы</a>
-      </div>
+      <div class="eyebrow">Poster POS • HDM • QR • Support</div>
+      <h1>POS системы для ресторанов и бизнеса в Армении</h1>
+      <p>Автоматизируем продажи, фискальные чеки HDM, QR оплаты, меню, персонал, отчёты и ежедневные процессы ресторанов, кафе и фудкортов.</p>
+      <div class="buttons"><a class="btn gold" href="tel:+37498615005">Позвонить: 098 61 50 05</a><a class="btn outline" href="https://wa.me/37498615005">WhatsApp</a><a class="btn outline" href="#pricing">Тарифы</a></div>
     </div>
   </header>
-
   <main>
-    <div class="card-wrap">
-      <div class="quick-card">
-        <div><strong>HDM</strong>Фискальные чеки, возвраты, архив и повторная печать.</div>
-        <div><strong>Poster POS</strong>Меню, зал, столы, сотрудники, оплаты и отчёты.</div>
-        <div><strong>Сопровождение</strong>Настройка, обучение и поддержка после запуска.</div>
-      </div>
-    </div>
-
-    <section id="industries" class="section">
-      <h2>Для кого подходит</h2>
-      <p class="lead">Система подходит для заведений, где важны скорость обслуживания, контроль кассы и понятные отчёты владельца.</p>
-      <div class="grid-4">
-        <div class="industry"><span>🍽️</span>Рестораны</div>
-        <div class="industry"><span>☕</span>Кофейни</div>
-        <div class="industry"><span>🥙</span>Шаурма</div>
-        <div class="industry"><span>🍔</span>Fast Food</div>
-        <div class="industry"><span>🍷</span>Бары</div>
-        <div class="industry"><span>🏨</span>Отели</div>
-        <div class="industry"><span>🛒</span>Фудкорты</div>
-        <div class="industry"><span>🚚</span>Доставка</div>
-      </div>
-    </section>
-
-    <section id="services" class="section">
-      <h2>Услуги</h2>
-      <p class="lead">Мы не просто устанавливаем POS. Мы настраиваем систему под реальные процессы ресторана, кафе или фудкорта.</p>
-      <div class="grid">
-        <div class="service"><h3>Подключение POS</h3><p>Настройка Poster POS, меню, категорий, модификаций, залов, столов и ролей сотрудников.</p></div>
-        <div class="service"><h3>HDM интеграция</h3><p>Фискализация чеков, архив, повторная печать, возвраты и контроль статусов печати.</p></div>
-        <div class="service"><h3>Оплаты и QR</h3><p>Настройка оплат, предоплат, сервисного процента, округлений и QR-сценариев.</p></div>
-        <div class="service"><h3>Обучение персонала</h3><p>Показываем кассирам и официантам, как работать быстро и без ошибок.</p></div>
-        <div class="service"><h3>Отчёты</h3><p>Помогаем владельцу видеть продажи, смены, кассу и ключевые показатели.</p></div>
-        <div class="service"><h3>Доработки</h3><p>Создаём дополнительные модули и интеграции под конкретные задачи заведения.</p></div>
-      </div>
-    </section>
-
-    <section class="section steps">
-      <h2>Как проходит подключение</h2>
-      <p class="lead">Процесс простой: сначала понимаем задачу, затем настраиваем систему и обучаем сотрудников.</p>
-      <div class="grid">
-        <div class="step"><h3>1. Консультация</h3><p>Обсуждаем формат заведения, количество касс, столов, сотрудников и нужные интеграции.</p></div>
-        <div class="step"><h3>2. Настройка</h3><p>Создаём меню, роли, оплаты, HDM-сценарии и проверяем корректность чеков.</p></div>
-        <div class="step"><h3>3. Запуск</h3><p>Обучаем персонал, проверяем реальные заказы и остаёмся на поддержке.</p></div>
-      </div>
-    </section>
-
-    <section id="pricing" class="section">
-      <h2>Тарифы</h2>
-      <p class="lead">Тарифы можно адаптировать под размер заведения и количество точек.</p>
-      <div class="grid">
-        <div class="price">
-          <h3>Start</h3>
-          <div class="amount">15 000 AMD</div>
-          <p>Для маленьких кафе и точек.</p>
-          <ul><li>Базовая настройка POS</li><li>Меню и категории</li><li>Базовая поддержка</li></ul>
-        </div>
-        <div class="price featured">
-          <span class="badge">Популярный</span>
-          <h3>Business</h3>
-          <div class="amount">30 000 AMD</div>
-          <p>Для ресторанов и кафе.</p>
-          <ul><li>POS настройка</li><li>HDM интеграция</li><li>Возвраты и повторная печать</li><li>Приоритетная поддержка</li></ul>
-        </div>
-        <div class="price">
-          <h3>Pro</h3>
-          <div class="amount">50 000 AMD+</div>
-          <p>Для нескольких точек и сложных процессов.</p>
-          <ul><li>Расширенная автоматизация</li><li>Индивидуальные доработки</li><li>Персональное сопровождение</li></ul>
-        </div>
-      </div>
-      <p class="mini-note">Финальная стоимость зависит от количества точек, касс, интеграций и объёма настройки.</p>
-    </section>
-
-    <section class="section">
-      <h2>Почему выбирают CIA SOFT</h2>
-      <p class="lead">Мы работаем не как продавцы коробочного решения, а как технический партнёр для заведения.</p>
-      <div class="grid">
-        <div class="why"><h3>Работаем в Армении</h3><p>Понимаем местные процессы, HDM, оплату, язык персонала и реальные задачи заведений.</p></div>
-        <div class="why"><h3>Собственные интеграции</h3><p>Можем закрывать нестандартные задачи, которые не решаются обычной установкой POS.</p></div>
-        <div class="why"><h3>Поддержка после запуска</h3><p>Помогаем не только установить систему, но и спокойно пройти первые дни работы.</p></div>
-      </div>
-    </section>
-
-    <section id="about" class="section about">
-      <h2>О компании</h2>
-      <div class="about-box">
-        <p><strong>CIA SOFT</strong> — команда из Армении, которая помогает заведениям общественного питания автоматизировать продажи, кассу и фискальные процессы.</p>
-        <p>Мы понимаем ресторанный бизнес изнутри: скорость обслуживания, ошибки кассиров, контроль чеков, возвраты, предоплаты и ежедневные отчёты владельца.</p>
-      </div>
-    </section>
-
-    <section id="faq" class="section">
-      <h2>Частые вопросы</h2>
-      <div class="grid">
-        <div class="faq"><h3>Сколько занимает подключение?</h3><p>Обычно базовую настройку можно подготовить быстро. Точный срок зависит от меню, количества столов и интеграций.</p></div>
-        <div class="faq"><h3>Работает ли с HDM?</h3><p>Да. Мы настраиваем сценарии фискализации, возврата, повторной печати и архива чеков.</p></div>
-        <div class="faq"><h3>Можно ли обучить персонал?</h3><p>Да. Мы показываем, как принимать заказы, закрывать чеки и избегать типичных ошибок.</p></div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="contact-box">
-        <div>
-          <h2>Получить консультацию</h2>
-          <p>Расскажите, какое у вас заведение, и мы предложим подходящую схему подключения.</p>
-        </div>
-        <div class="buttons">
-          <a class="btn gold" href="tel:+37498615005">098 61 50 05</a>
-          <a class="btn outline" href="https://wa.me/37498615005">WhatsApp</a>
-        </div>
-      </div>
-    </section>
+    <div class="card-wrap"><div class="quick-card"><div><strong>HDM</strong>Фискальные чеки, возвраты, архив.</div><div><strong>POS</strong>Меню, зал, столы, сотрудники.</div><div><strong>QR</strong>Оплаты, предоплаты, сценарии.</div><div><strong>Support</strong>Обучение и сопровождение.</div></div></div>
+    <section id="industries" class="section"><h2>Для кого подходит</h2><p class="lead">Система подходит для заведений, где важны скорость обслуживания, контроль кассы и понятные отчёты владельца.</p><div class="grid4"><div class="industry"><span>🍽️</span>Рестораны</div><div class="industry"><span>☕</span>Кофейни</div><div class="industry"><span>🥙</span>Шаурма</div><div class="industry"><span>🍔</span>Fast Food</div><div class="industry"><span>🍷</span>Бары</div><div class="industry"><span>🏨</span>Отели</div><div class="industry"><span>🛒</span>Фудкорты</div><div class="industry"><span>🚚</span>Доставка</div></div></section>
+    <section id="services" class="section"><h2>Наши решения</h2><p class="lead">Мы настраиваем систему под реальные процессы бизнеса, а не просто устанавливаем программу.</p><div class="grid"><div class="service"><h3>Poster POS</h3><p>Меню, категории, модификации, зал, столы, роли сотрудников и отчёты.</p></div><div class="service"><h3>HDM / фискализация</h3><p>Фискальные чеки, возвраты, повторная печать и локальный архив.</p></div><div class="service"><h3>QR и оплаты</h3><p>Оплаты, предоплаты, сервисный процент, округления и QR-сценарии.</p></div><div class="service"><h3>Обучение</h3><p>Показываем кассирам и официантам, как быстро работать без ошибок.</p></div><div class="service"><h3>Аналитика</h3><p>Помогаем владельцу видеть продажи, смены и ключевые показатели.</p></div><div class="service"><h3>Доработки</h3><p>Создаём дополнительные модули и интеграции под конкретные задачи.</p></div></div></section>
+    <section class="section steps"><h2>Как проходит подключение</h2><p class="lead">Процесс простой: сначала понимаем задачу, затем настраиваем систему и обучаем сотрудников.</p><div class="grid"><div class="step"><h3>1. Консультация</h3><p>Обсуждаем формат заведения, количество касс, столов, сотрудников и интеграции.</p></div><div class="step"><h3>2. Настройка</h3><p>Создаём меню, роли, оплаты, HDM-сценарии и проверяем корректность чеков.</p></div><div class="step"><h3>3. Запуск</h3><p>Обучаем персонал, проверяем реальные заказы и остаёмся на поддержке.</p></div></div></section>
+    <section id="pricing" class="section"><h2>Тарифы</h2><p class="lead">Стоимость зависит от количества точек, касс, интеграций и объёма настройки.</p><div class="grid"><div class="price"><h3>Start</h3><div class="amount">15 000 AMD</div><p>Для маленьких кафе и точек.</p><ul><li>Базовая настройка POS</li><li>Меню и категории</li><li>Базовая поддержка</li></ul></div><div class="price featured"><span class="badge">Популярный</span><h3>Business</h3><div class="amount">30 000 AMD</div><p>Для ресторанов и кафе.</p><ul><li>POS настройка</li><li>HDM интеграция</li><li>Возвраты и повторная печать</li><li>Приоритетная поддержка</li></ul></div><div class="price"><h3>Pro</h3><div class="amount">50 000 AMD+</div><p>Для нескольких точек.</p><ul><li>Расширенная автоматизация</li><li>Индивидуальные доработки</li><li>Персональное сопровождение</li></ul></div></div></section>
+    <section class="section dark"><h2>Почему выбирают CIA SOFT</h2><p class="lead">Мы работаем как технический партнёр для заведения.</p><div class="grid"><div class="why"><h3>⚡ Быстрый запуск</h3><p>Помогаем быстро пройти путь от консультации до рабочей кассы.</p></div><div class="why"><h3>🛡️ Надёжность</h3><p>Контроль чеков, архив, возвраты и понятная поддержка.</p></div><div class="why"><h3>🛠️ Свои интеграции</h3><p>Закрываем нестандартные задачи, которые не решаются обычной установкой.</p></div><div class="why"><h3>📞 Поддержка</h3><p>Помогаем после запуска и объясняем всё простым языком.</p></div><div class="why"><h3>📊 Аналитика</h3><p>Владелец получает понятную картину по продажам и сменам.</p></div><div class="why"><h3>🇦🇲 Армения</h3><p>Понимаем местные процессы, HDM и ресторанный рынок.</p></div></div></section>
+    <section class="section"><h2>Галерея решений</h2><p class="lead">Позже здесь можно заменить карточки на реальные фотографии кассы, планшетов, HDM и интерфейса.</p><div class="grid"><div class="gallery-card"><div class="gallery-img">🖥️</div><div><h3>POS терминал</h3><p>Рабочее место кассира и официанта.</p></div></div><div class="gallery-card"><div class="gallery-img">🧾</div><div><h3>HDM чек</h3><p>Фискализация и повторная печать.</p></div></div><div class="gallery-card"><div class="gallery-img">📱</div><div><h3>QR оплата</h3><p>Удобные сценарии оплаты для клиентов.</p></div></div></div></section>
+    <section id="cases" class="section about"><h2>Кейсы и клиенты</h2><p class="lead">Этот блок можно наполнить реальными заведениями после разрешения клиентов.</p><div class="grid"><div class="case-card"><span class="case-tag">Ресторан</span><h3>Кейс 1</h3><p>Настройка POS, HDM, зала, меню и обучение персонала.</p></div><div class="case-card"><span class="case-tag">Кафе</span><h3>Кейс 2</h3><p>Быстрый запуск, контроль оплат и понятные отчёты владельца.</p></div><div class="case-card"><span class="case-tag">Фудкорт</span><h3>Кейс 3</h3><p>Несколько точек, поддержка персонала и индивидуальные сценарии.</p></div></div></section>
+    <section id="about" class="section"><h2>О компании</h2><div class="about-box"><p><strong>CIA SOFT</strong> — команда из Армении, которая помогает заведениям общественного питания автоматизировать продажи, кассу и фискальные процессы.</p><p>Мы понимаем ресторанный бизнес изнутри: скорость обслуживания, ошибки кассиров, контроль чеков, возвраты, предоплаты и ежедневные отчёты владельца.</p></div></section>
+    <section id="faq" class="section"><h2>Частые вопросы</h2><div class="grid"><div class="faq"><h3>Сколько занимает подключение?</h3><p>Базовую настройку можно подготовить быстро. Срок зависит от меню, столов и интеграций.</p></div><div class="faq"><h3>Работает ли с HDM?</h3><p>Да. Настраиваем фискализацию, возвраты, повторную печать и архив чеков.</p></div><div class="faq"><h3>Можно ли обучить персонал?</h3><p>Да. Показываем, как принимать заказы, закрывать чеки и избегать ошибок.</p></div></div></section>
+    <section id="contact" class="section"><div class="grid"><div class="form-box"><h2>Оставить заявку</h2><p class="lead">Форма пока открывает WhatsApp. Позже подключим CRM.</p><input placeholder="Ваше имя"><input placeholder="Телефон"><select><option>Тип заведения</option><option>Ресторан</option><option>Кафе</option><option>Фудкорт</option><option>Доставка</option></select><textarea placeholder="Что нужно автоматизировать?"></textarea><a class="btn green" href="https://wa.me/37498615005">Отправить в WhatsApp</a></div><div><div class="contact-box"><div><h2>Получить консультацию</h2><p>Расскажите, какое у вас заведение, и мы предложим подходящую схему подключения.</p></div><div class="buttons"><a class="btn gold" href="tel:+37498615005">098 61 50 05</a><a class="btn outline" href="https://wa.me/37498615005">WhatsApp</a></div></div><div style="height:18px"></div><div class="map-box">📍 Yerevan, Armenia<br>CIA SOFT</div></div></div></section>
   </main>
-
   <a class="floating-whatsapp" href="https://wa.me/37498615005">WhatsApp</a>
-
-  <footer>
-    <p>© 2026 CIA SOFT. Yerevan, Armenia.</p>
-  </footer>
+  <footer class="footer-dark"><div class="footer-grid"><div><div class="logo">CIA SOFT<small>RESTAURANT AUTOMATION</small></div><p>Современные POS решения для ресторанов, кафе и фудкортов в Армении.</p></div><div><strong>Услуги</strong><a href="#services">Poster POS</a><a href="#services">HDM</a><a href="#services">QR оплаты</a></div><div><strong>Компания</strong><a href="#about">О компании</a><a href="#cases">Кейсы</a><a href="#pricing">Тарифы</a></div><div><strong>Контакты</strong><a href="tel:+37498615005">098 61 50 05</a><a href="https://wa.me/37498615005">WhatsApp</a><a href="mailto:flashbaracademia@gmail.com">flashbaracademia@gmail.com</a></div></div><p style="text-align:center;margin-top:34px">© 2026 CIA SOFT. Yerevan, Armenia.</p></footer>
 </body>
 </html>
