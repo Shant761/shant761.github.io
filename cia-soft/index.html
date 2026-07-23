@@ -3,81 +3,1475 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CIA SOFT — POS система для ресторанов и кафе в Армении</title>
-  <meta name="description" content="CIA SOFT — POS автоматизация ресторанов, кафе, фудкортов и доставки в Армении: Poster POS, HDM, QR оплаты, обучение персонала и поддержка." />
+  <title>CIA SOFT - POS система для ресторанов и кафе в Армении</title>
+  <meta name="description" content="CIA SOFT автоматизирует рестораны, кафе, фудкорты и доставку в Армении: Poster POS, HDM, QR оплаты, обучение персонала, поддержка и индивидуальные модули." />
   <meta name="keywords" content="POS Armenia, Poster POS Armenia, HDM Armenia, restaurant automation Armenia, CIA SOFT" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#102820" />
-  <meta property="og:title" content="CIA SOFT — POS автоматизация ресторанов в Армении" />
-  <meta property="og:description" content="Poster POS, HDM, QR оплаты, обучение персонала и поддержка." />
+  <meta name="theme-color" content="#071714" />
+  <meta property="og:title" content="CIA SOFT - POS автоматизация ресторанов в Армении" />
+  <meta property="og:description" content="Poster POS, HDM, QR оплаты, обучение персонала, поддержка и кастомные модули." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shant761.github.io/cia-soft/" />
   <link rel="canonical" href="https://shant761.github.io/cia-soft/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071714'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='20' font-weight='900' fill='%23b8f3dc'%3ECIA%3C/text%3E%3C/svg%3E" />
   <style>
-    :root{--ink:#102820;--ink2:#183b31;--gold:#c9973f;--gold2:#e7bd57;--cream:#fbf8f1;--muted:#66736e;--line:#eadfcd;--soft:#f5efe4;--goldSoft:#fff3d8;--shadow:0 24px 70px rgba(16,40,32,.12);--r:26px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}a{color:inherit}.container{width:min(1120px,calc(100% - 40px));margin:auto}.intro{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:radial-gradient(circle at 50% 36%,rgba(231,189,87,.18),transparent 34%),#030504;color:#fff;transition:.7s ease}.intro.hide{opacity:0;visibility:hidden;pointer-events:none}.intro-card{text-align:center;width:min(620px,calc(100% - 32px));padding:34px 22px}.intro-logo{width:min(245px,60vw);height:min(245px,60vw);object-fit:contain;filter:drop-shadow(0 0 34px rgba(231,189,87,.8));animation:pulse 2.8s ease-in-out infinite}.fallback-logo{display:none;font-size:112px;color:var(--gold2);text-shadow:0 0 34px rgba(231,189,87,.9);animation:pulse 2.8s ease-in-out infinite}.intro h1{margin:14px 0 5px;font-size:clamp(38px,7vw,72px);letter-spacing:.08em}.intro p{margin:0 0 24px;color:rgba(255,255,255,.72);font-size:18px}.intro-start{border:0;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1b1204;padding:15px 36px;font-weight:950;font-size:16px;box-shadow:0 18px 46px rgba(201,151,63,.35);cursor:pointer}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}.topbar{background:var(--ink);color:#fff;position:sticky;top:0;z-index:40;box-shadow:0 10px 30px rgba(0,0,0,.14)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{text-decoration:none;font-weight:950;font-size:22px;letter-spacing:.08em;white-space:nowrap}.brand span{display:block;font-size:10px;color:var(--gold);letter-spacing:.18em;margin-top:-2px}.menu{display:flex;align-items:center;gap:16px}.menu a{text-decoration:none;font-weight:850;font-size:14px;color:rgba(255,255,255,.82)}.nav-cta{background:var(--gold);color:#1b1204!important;padding:10px 15px;border-radius:999px}.langs{display:flex;gap:5px;padding:4px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}.langs button{border:0;background:transparent;color:rgba(255,255,255,.72);font-weight:950;font-size:12px;padding:7px 9px;border-radius:999px;cursor:pointer}.langs button.active{background:#fff;color:var(--ink)}.hero{overflow:hidden;padding:84px 0 58px;background:radial-gradient(circle at 82% 12%,rgba(231,189,87,.26),transparent 28%),linear-gradient(180deg,#fff 0%,var(--cream) 100%)}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:13px;font-weight:950;box-shadow:0 10px 28px rgba(16,40,32,.05)}.eyebrow:before{content:"";width:8px;height:8px;background:var(--gold);border-radius:50%}h1{font-size:clamp(44px,6.4vw,76px);line-height:.96;letter-spacing:-.06em;margin:18px 0 20px}.hero p{font-size:19px;color:var(--muted);max-width:660px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 20px;border-radius:999px;text-decoration:none;font-weight:950;border:1px solid transparent;cursor:pointer}.btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1b1204;box-shadow:0 14px 34px rgba(201,151,63,.28)}.btn.secondary{background:#fff;border-color:var(--line)}.hero-note{font-size:13px;color:var(--muted);margin-top:12px}.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.badge{background:var(--ink);color:#fff;border-radius:999px;padding:8px 12px;font-weight:900;font-size:12px}.badge.gold{background:var(--goldSoft);color:#7a5414;border:1px solid rgba(201,151,63,.28)}.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.trust div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;color:var(--muted);font-size:13px;box-shadow:0 12px 32px rgba(16,40,32,.05)}.trust strong{display:block;color:var(--ink);font-size:17px}.device{position:relative;min-height:520px;display:grid;place-items:center}.device:before{content:"";position:absolute;width:92%;height:72%;border-radius:50%;background:radial-gradient(circle,rgba(201,151,63,.24),rgba(16,40,32,.08),transparent 70%);filter:blur(8px)}.tablet{position:relative;width:min(100%,510px);background:linear-gradient(145deg,#162f27,#071510);border-radius:38px;padding:16px;box-shadow:0 35px 80px rgba(16,40,32,.28);transform:rotate(-2deg)}.screen{background:#fbf8f1;border-radius:26px;padding:20px}.screen-head{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:14px}.online{background:#e8f7ef;color:#146c43;border-radius:999px;padding:6px 10px;font-weight:950;font-size:12px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px}.stat:nth-child(2){background:var(--goldSoft)}.stat span{display:block;color:var(--muted);font-size:12px;font-weight:850}.stat strong{font-size:24px}.row{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-top:1px solid var(--line);font-size:14px}.pill{background:var(--soft);border-radius:999px;padding:6px 10px;font-weight:950}.float-card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px 16px;box-shadow:0 18px 42px rgba(16,40,32,.12);font-weight:950}.float-card small{display:block;color:var(--muted)}.f1{left:0;top:54px}.f2{right:0;bottom:74px}.f3{left:22px;bottom:18px;background:var(--ink);color:#fff}.f3 small{color:rgba(255,255,255,.65)}section{padding:74px 0}.section-head{max-width:780px;margin-bottom:34px}.kicker{color:var(--gold);text-transform:uppercase;font-size:13px;font-weight:950;letter-spacing:.12em}.section-head h2{font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.035em;margin:8px 0 12px}.lead{color:var(--muted);font-size:18px}.white{background:#fff}.soft{background:var(--soft)}.dark{background:var(--ink);color:#fff}.dark .lead,.dark .card p{color:rgba(255,255,255,.72)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card,.price,.industry,.faq,.step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:0 12px 32px rgba(16,40,32,.05)}.dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);box-shadow:none}.card h3,.price h3,.faq h3,.step h3{margin:0 0 10px;font-size:21px}.card p,.price p,.faq p,.step p{margin:0;color:var(--muted)}.icon{width:42px;height:42px;border-radius:14px;background:var(--goldSoft);display:grid;place-items:center;font-size:22px;margin-bottom:15px}.industry{text-align:center;font-weight:950}.industry span{display:block;font-size:31px;margin-bottom:8px}.video-wrap{background:linear-gradient(135deg,var(--ink),var(--ink2));border-radius:34px;padding:18px;box-shadow:var(--shadow)}video{width:100%;display:block;border-radius:24px;background:#000}.video-cap{display:flex;justify-content:space-between;gap:16px;margin-top:16px;color:rgba(255,255,255,.72)}.video-cap strong{color:#fff}.amount{font-size:32px;font-weight:950;margin:10px 0}.featured{border:2px solid var(--gold);box-shadow:var(--shadow)}ul{padding-left:19px;color:var(--muted)}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}.contact-card{background:linear-gradient(135deg,var(--ink),var(--ink2));color:#fff;border-radius:34px;padding:32px}.contact-card h2{font-size:36px;line-height:1.05;margin:0 0 14px}.contact-card p{color:rgba(255,255,255,.76)}.contact-card a,.contact-card div{display:block;text-decoration:none;margin:10px 0;font-weight:850}.form{background:#fff;border:1px solid var(--line);border-radius:34px;padding:26px;box-shadow:var(--shadow)}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:15px;padding:14px 15px;margin-bottom:12px;font:inherit}textarea{min-height:110px}.note{font-size:13px;color:var(--muted)}footer{background:#081b15;color:rgba(255,255,255,.76);padding:42px 0}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:24px}.footer-grid a{display:block;text-decoration:none;margin:7px 0;color:rgba(255,255,255,.76)}.footer-logo{font-weight:950;color:#fff;letter-spacing:.08em}.wa{position:fixed;right:18px;bottom:18px;z-index:50;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;text-decoration:none;display:grid;place-items:center;font-size:25px;font-weight:950;box-shadow:0 12px 30px rgba(0,0,0,.24)}.ai-toggle{position:fixed;right:18px;bottom:86px;z-index:52;border:0;border-radius:999px;background:var(--ink);color:#fff;padding:13px 17px;font-weight:950;box-shadow:0 14px 34px rgba(0,0,0,.25);cursor:pointer}.ai-panel{position:fixed;right:18px;bottom:148px;width:min(380px,calc(100% - 28px));max-height:70vh;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 24px 70px rgba(0,0,0,.24);z-index:54;display:none;overflow:hidden}.ai-panel.open{display:block}.ai-head{background:linear-gradient(135deg,var(--ink),var(--ink2));color:#fff;padding:16px 18px;display:flex;justify-content:space-between}.ai-close{background:transparent;border:0;color:#fff;font-size:22px}.ai-body{padding:16px;overflow:auto;max-height:calc(70vh - 84px)}.msg{padding:12px 14px;border-radius:16px;margin:0 0 10px;font-size:14px}.msg.bot{background:var(--soft)}.msg.user{background:var(--ink);color:#fff;margin-left:42px}.ai-options{display:grid;gap:8px}.ai-options button,.ai-reset{border:1px solid var(--line);background:#fff;border-radius:14px;padding:11px 12px;text-align:left;font-weight:850}.ai-result{background:#eef6f1;border-radius:18px;padding:14px}.ai-whatsapp{width:100%;margin-top:10px;border:0;background:#25d366;color:#fff;border-radius:14px;padding:13px;font-weight:950}@media(max-width:920px){.hero-grid,.split{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.grid4{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.float-card{display:none}.nav{flex-wrap:wrap}}@media(max-width:720px){.container{width:min(100% - 28px,1120px)}.nav{padding:14px 0;align-items:flex-start;flex-direction:column}.menu{width:100%;overflow-x:auto;gap:12px}.menu a{font-size:13px;white-space:nowrap}.hero{padding:38px 0 34px}h1{font-size:38px}.hero p{font-size:16px}.btn{width:100%}.trust,.grid,.grid4,.footer-grid{grid-template-columns:1fr}.tablet{transform:none;border-radius:26px;padding:10px}.stats{grid-template-columns:1fr}section{padding:52px 0}.section-head h2{font-size:30px}.contact-card,.form,.video-wrap{border-radius:24px;padding:20px}.video-cap{display:block}.wa{width:50px;height:50px;right:14px;bottom:14px}.ai-toggle{right:14px;bottom:76px}.ai-panel{right:14px;bottom:132px}}
+    :root {
+      --bg: #f7faf9;
+      --paper: #ffffff;
+      --ink: #071714;
+      --muted: #64736f;
+      --line: #dbe5e2;
+      --green: #0f7a5a;
+      --green-dark: #0a3a2f;
+      --mint: #b8f3dc;
+      --cyan: #49c8ff;
+      --amber: #ffbf45;
+      --coral: #ff6b4a;
+      --shadow: 0 24px 70px rgba(7, 23, 20, 0.12);
+      --radius: 8px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      border: 1px solid rgba(15, 122, 90, 0.2);
+      background: rgba(184, 243, 220, 0.48);
+      color: #07503b;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(15, 122, 90, 0.12);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 19px;
+      font-weight: 850;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--green), #14a474);
+      color: white;
+      box-shadow: 0 14px 34px rgba(15, 122, 90, 0.25);
+    }
+    .btn.secondary {
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .btn.dark {
+      background: var(--ink);
+      color: white;
+    }
+
+    .intro {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% 26%, rgba(73, 200, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 36% 70%, rgba(255, 191, 69, 0.18), transparent 32%),
+        #06110f;
+      color: white;
+      transition: opacity 0.55s ease, visibility 0.55s ease;
+    }
+    .intro.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+    .intro-card {
+      width: min(560px, calc(100% - 32px));
+      text-align: center;
+      padding: 34px 22px;
+    }
+    .intro-mark {
+      width: 156px;
+      height: 156px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(184, 243, 220, 0.95), rgba(73, 200, 255, 0.88)),
+        #0f7a5a;
+      color: #06110f;
+      font-size: 48px;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      box-shadow: 0 28px 80px rgba(73, 200, 255, 0.26);
+      animation: introPulse 2.8s ease-in-out infinite;
+    }
+    .intro h1 {
+      margin: 0;
+      font-size: clamp(42px, 8vw, 76px);
+      letter-spacing: 0;
+      line-height: 0.95;
+    }
+    .intro p { color: rgba(255,255,255,0.72); margin: 12px 0 26px; font-size: 18px; }
+    @keyframes introPulse {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-4px) scale(1.025); }
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.84);
+      border-bottom: 1px solid rgba(219, 229, 226, 0.85);
+      backdrop-filter: blur(18px);
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: var(--mint);
+      font-size: 13px;
+    }
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: -2px;
+    }
+    .menu { display: flex; align-items: center; gap: 6px; }
+    .menu a {
+      text-decoration: none;
+      color: #33423e;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 10px 12px;
+      border-radius: 999px;
+    }
+    .menu a:hover { background: #eef5f2; }
+    .langs {
+      display: flex;
+      gap: 4px;
+      padding: 4px;
+      background: #edf4f1;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+    .langs button {
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .langs button.active {
+      background: white;
+      color: var(--ink);
+      box-shadow: 0 8px 20px rgba(7, 23, 20, 0.08);
+    }
+
+    .hero {
+      position: relative;
+      padding: 78px 0 66px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(184, 243, 220, 0.5), rgba(73, 200, 255, 0.16) 44%, rgba(255, 191, 69, 0.18)),
+        var(--bg);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -38% 40%;
+      height: 420px;
+      background: linear-gradient(135deg, rgba(15, 122, 90, 0.22), rgba(73, 200, 255, 0.22));
+      transform: rotate(-8deg);
+      border-radius: 80px;
+      filter: blur(4px);
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 0.96fr;
+      align-items: center;
+      gap: 54px;
+    }
+    h1 {
+      max-width: 720px;
+      margin: 18px 0;
+      font-size: clamp(44px, 6.2vw, 80px);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+    .hero-text {
+      max-width: 640px;
+      color: #40504c;
+      font-size: 19px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .chip {
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(219, 229, 226, 0.95);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 850;
+      color: #243530;
+    }
+    .hero-panel {
+      position: relative;
+      padding: 12px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.46);
+      border: 1px solid rgba(255,255,255,0.75);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+    .dashboard {
+      overflow: hidden;
+      border-radius: 20px;
+      background: #06110f;
+      color: white;
+      min-height: 520px;
+      padding: 18px;
+    }
+    .dash-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .status {
+      background: rgba(184, 243, 220, 0.16);
+      color: var(--mint);
+      border: 1px solid rgba(184, 243, 220, 0.22);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .dash-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .metric, .order, .terminal-card {
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.07);
+      padding: 16px;
+    }
+    .metric span, .order span { display: block; color: rgba(255,255,255,0.62); font-size: 12px; font-weight: 800; }
+    .metric strong { display: block; margin-top: 4px; font-size: 26px; letter-spacing: -0.03em; }
+    .metric.accent { background: linear-gradient(135deg, rgba(15,122,90,0.92), rgba(73,200,255,0.48)); }
+    .terminal-card {
+      margin-top: 12px;
+      background: #f7faf9;
+      color: var(--ink);
+    }
+    .terminal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .terminal-head strong { font-size: 15px; }
+    .terminal-screen {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 10px;
+    }
+    .product-list { display: grid; gap: 8px; }
+    .product {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .receipt {
+      background: var(--ink);
+      color: white;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 13px;
+    }
+    .receipt div { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+    .receipt strong { color: var(--mint); }
+    .order { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; }
+    .order b { color: var(--amber); }
+
+    section { padding: 78px 0; }
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+    .kicker {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 13px;
+      font-weight: 950;
+    }
+    h2 {
+      margin: 8px 0 12px;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+    .lead { color: var(--muted); font-size: 18px; margin: 0; }
+    .white { background: white; }
+    .dark {
+      background: #06110f;
+      color: white;
+    }
+    .dark .lead { color: rgba(255,255,255,0.7); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .grid4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .card, .step, .price, .faq, .industry {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 12px 30px rgba(7, 23, 20, 0.05);
+    }
+    .card h3, .step h3, .price h3, .faq h3 { margin: 0 0 9px; font-size: 20px; }
+    .card p, .step p, .price p, .faq p { margin: 0; color: var(--muted); }
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background: #eef9f4;
+      color: var(--green);
+      font-size: 22px;
+    }
+    .card:nth-child(2n) .icon { background: #eff8ff; color: #087bb6; }
+    .card:nth-child(3n) .icon { background: #fff4df; color: #9b6100; }
+    .video-wrap {
+      border-radius: 8px;
+      padding: 14px;
+      background: linear-gradient(135deg, #06110f, #0a3a2f);
+      box-shadow: var(--shadow);
+    }
+    video {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      background: #000;
+      aspect-ratio: 16 / 9;
+    }
+    .video-cap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 14px;
+      color: rgba(255,255,255,0.72);
+    }
+    .video-cap strong { color: white; }
+    .industry {
+      min-height: 112px;
+      display: grid;
+      align-content: center;
+      gap: 8px;
+      font-weight: 900;
+      text-align: center;
+    }
+    .industry span:first-child { font-size: 28px; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      counter-reset: steps;
+    }
+    .step { position: relative; overflow: hidden; }
+    .step::before {
+      counter-increment: steps;
+      content: "0" counter(steps);
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      background: var(--ink);
+      color: var(--mint);
+      font-weight: 950;
+    }
+    .feature-band {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .feature-list {
+      display: grid;
+      gap: 12px;
+    }
+    .feature-row {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .feature-row strong { display: block; margin-bottom: 3px; }
+    .feature-row p { margin: 0; color: rgba(255,255,255,0.66); }
+    .feature-row .mini {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: rgba(184, 243, 220, 0.16);
+      color: var(--mint);
+      font-weight: 950;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .price { position: relative; }
+    .price.featured {
+      border-color: rgba(15, 122, 90, 0.38);
+      box-shadow: var(--shadow);
+      transform: translateY(-8px);
+    }
+    .amount {
+      margin: 10px 0 14px;
+      font-size: 30px;
+      font-weight: 950;
+    }
+    .tag {
+      display: inline-flex;
+      border-radius: 999px;
+      background: var(--mint);
+      color: #07503b;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    ul { margin: 18px 0 0; padding-left: 18px; color: var(--muted); }
+    li { margin: 8px 0; }
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .contact-card {
+      background:
+        linear-gradient(135deg, rgba(73, 200, 255, 0.18), transparent 48%),
+        #06110f;
+      color: white;
+      border-radius: 8px;
+      padding: 28px;
+    }
+    .contact-card h2 { margin-top: 0; }
+    .contact-card p { color: rgba(255,255,255,0.72); }
+    .contact-links { display: grid; gap: 10px; margin-top: 20px; }
+    .contact-links a, .contact-links div {
+      display: block;
+      padding: 13px 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+      font-weight: 850;
+    }
+    .form {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 15px;
+      margin-bottom: 12px;
+      background: #fbfdfc;
+      color: var(--ink);
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: 3px solid rgba(73, 200, 255, 0.24);
+      border-color: var(--cyan);
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .note { color: var(--muted); font-size: 13px; margin-top: 10px; }
+    footer {
+      background: #06110f;
+      color: rgba(255,255,255,0.7);
+      padding: 42px 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.4fr;
+      gap: 24px;
+    }
+    .footer-logo { color: white; font-weight: 950; font-size: 20px; }
+    footer a {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      margin: 8px 0;
+    }
+    .wa {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 58;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      font-weight: 950;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+    }
+    .ai-toggle {
+      position: fixed;
+      right: 18px;
+      bottom: 86px;
+      z-index: 58;
+      border: 0;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      padding: 13px 16px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+    }
+    .ai-panel {
+      position: fixed;
+      right: 18px;
+      bottom: 148px;
+      z-index: 60;
+      width: min(390px, calc(100% - 28px));
+      max-height: 72vh;
+      display: none;
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 26px 80px rgba(0,0,0,0.24);
+    }
+    .ai-panel.open { display: block; }
+    .ai-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px;
+      background: var(--ink);
+      color: white;
+    }
+    .ai-head p { margin: 3px 0 0; color: rgba(255,255,255,0.68); font-size: 13px; }
+    .ai-close {
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .ai-body { padding: 14px; overflow: auto; max-height: calc(72vh - 78px); }
+    .msg {
+      padding: 11px 12px;
+      border-radius: 8px;
+      margin-bottom: 9px;
+      font-size: 14px;
+    }
+    .msg.bot { background: #eef5f2; }
+    .msg.user { background: var(--ink); color: white; margin-left: 42px; }
+    .ai-options { display: grid; gap: 8px; }
+    .ai-options button, .ai-reset {
+      text-align: left;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 8px;
+      padding: 11px 12px;
+      font-weight: 850;
+      cursor: pointer;
+    }
+    .ai-result {
+      background: #eef9f4;
+      border: 1px solid rgba(15,122,90,0.18);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .ai-whatsapp {
+      width: 100%;
+      border: 0;
+      border-radius: 8px;
+      background: #25d366;
+      color: white;
+      padding: 13px;
+      margin-top: 10px;
+      font-weight: 950;
+    }
+
+    /* Reference-inspired neon editorial skin */
+    :root {
+      --bg: #172222;
+      --paper: rgba(19, 34, 32, 0.78);
+      --ink: #f5fbf8;
+      --muted: #9aa8a4;
+      --line: rgba(173, 255, 232, 0.14);
+      --green: #00f0bd;
+      --green-dark: #071614;
+      --mint: #00ffd0;
+      --cyan: #6ff6ff;
+      --amber: #b7ff62;
+      --coral: #00f0bd;
+      --shadow: 0 34px 90px rgba(0, 0, 0, 0.42), 0 0 70px rgba(0, 240, 189, 0.12);
+    }
+    body {
+      background:
+        radial-gradient(circle at 84% 6%, rgba(111, 246, 255, 0.26), transparent 26%),
+        radial-gradient(circle at 22% 42%, rgba(0, 240, 189, 0.16), transparent 28%),
+        linear-gradient(180deg, #172222 0%, #0c1514 42%, #182625 100%);
+      color: var(--ink);
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at 50% 18%, black, transparent 68%);
+      z-index: -1;
+    }
+    .container { width: min(1240px, calc(100% - 56px)); }
+    .intro {
+      background:
+        radial-gradient(circle at 67% 14%, rgba(111,246,255,.32), transparent 28%),
+        radial-gradient(circle at 38% 62%, rgba(0,240,189,.18), transparent 34%),
+        #121d1d;
+    }
+    .intro-mark,
+    .brand-mark {
+      background: linear-gradient(135deg, #00f0bd, #75fff0);
+      color: #06110f;
+      box-shadow: 0 0 36px rgba(0, 240, 189, 0.46);
+    }
+    .topbar {
+      width: min(1240px, calc(100% - 56px));
+      margin: 26px auto 0;
+      border: 1px solid rgba(173, 255, 232, 0.14);
+      border-radius: 34px;
+      background: rgba(13, 25, 23, 0.72);
+      box-shadow: 0 20px 60px rgba(0,0,0,.28);
+      backdrop-filter: blur(22px);
+    }
+    .nav { min-height: 70px; padding: 0 22px; }
+    .brand small,
+    .menu a,
+    .lead,
+    .hero-text,
+    .card p,
+    .step p,
+    .price p,
+    .faq p,
+    ul,
+    .note {
+      color: rgba(224, 244, 238, 0.66);
+    }
+    .menu a:hover { background: rgba(0, 240, 189, 0.09); color: white; }
+    .langs {
+      background: rgba(255,255,255,.05);
+      border-color: rgba(173, 255, 232, 0.14);
+    }
+    .langs button.active {
+      background: var(--mint);
+      color: #06110f;
+      box-shadow: 0 0 26px rgba(0, 240, 189, 0.34);
+    }
+    .hero {
+      min-height: calc(100vh - 96px);
+      padding: 80px 0 70px;
+      background:
+        radial-gradient(circle at 76% 28%, rgba(111,246,255,.28), transparent 30%),
+        radial-gradient(circle at 28% 42%, rgba(0,240,189,.14), transparent 28%);
+    }
+    .hero::before {
+      content: "CIA SOFT";
+      position: absolute;
+      left: max(28px, calc((100vw - 1240px) / 2));
+      top: 18px;
+      font-size: clamp(58px, 10vw, 142px);
+      line-height: 0.8;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,.08);
+      text-shadow: 0 0 34px rgba(0, 240, 189, 0.16);
+      white-space: nowrap;
+    }
+    .hero::after {
+      inset: auto -10% -26% 38%;
+      height: 520px;
+      border-radius: 120px;
+      background: radial-gradient(circle, rgba(0, 240, 189, 0.22), rgba(111,246,255,.16), transparent 70%);
+      filter: blur(18px);
+    }
+    .hero-grid {
+      grid-template-columns: .92fr 1.08fr;
+      gap: 44px;
+      padding-top: 96px;
+    }
+    .eyebrow {
+      background: rgba(0, 240, 189, 0.08);
+      border-color: rgba(0, 240, 189, 0.22);
+      color: var(--mint);
+      box-shadow: 0 0 34px rgba(0, 240, 189, 0.08);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    h1 {
+      font-size: clamp(46px, 6.8vw, 92px);
+      line-height: .93;
+      letter-spacing: .02em;
+      text-shadow: 0 0 34px rgba(0, 240, 189, 0.18);
+    }
+    h1::first-line,
+    h2 strong {
+      color: var(--mint);
+    }
+    h2 {
+      letter-spacing: .03em;
+      text-shadow: 0 0 28px rgba(0, 240, 189, 0.11);
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, #00f0bd, #78fff1);
+      color: #06110f;
+      box-shadow: 0 0 28px rgba(0, 240, 189, 0.32), 0 16px 34px rgba(0, 0, 0, 0.24);
+    }
+    .btn.secondary {
+      background: rgba(255,255,255,.055);
+      color: white;
+      border-color: rgba(173, 255, 232, 0.18);
+    }
+    .chips { margin-top: 30px; }
+    .chip {
+      background: rgba(255,255,255,.07);
+      border-color: rgba(173, 255, 232, 0.16);
+      color: rgba(245,251,248,.78);
+      box-shadow: inset 0 0 26px rgba(0, 240, 189, 0.025);
+    }
+    .hero-panel {
+      border-radius: 46px;
+      padding: 18px;
+      background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.035));
+      border-color: rgba(173, 255, 232, 0.18);
+      box-shadow: 0 42px 110px rgba(0,0,0,.48), 0 0 92px rgba(0, 240, 189, 0.18);
+    }
+    .dashboard {
+      min-height: 620px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(0,240,189,.20), transparent 28%),
+        linear-gradient(135deg, rgba(15, 29, 26, 0.97), rgba(5, 13, 12, 0.98));
+      border: 1px solid rgba(173, 255, 232, 0.12);
+      box-shadow: inset 0 0 70px rgba(0,0,0,.26);
+      padding: 26px;
+    }
+    .dash-top { border-bottom-color: rgba(173, 255, 232, 0.14); }
+    .status {
+      background: rgba(0, 240, 189, 0.12);
+      color: var(--mint);
+      border-color: rgba(0, 240, 189, 0.24);
+      box-shadow: 0 0 22px rgba(0, 240, 189, 0.14);
+    }
+    .metric,
+    .order,
+    .terminal-card,
+    .card,
+    .step,
+    .price,
+    .faq,
+    .industry,
+    .form {
+      background: rgba(255,255,255,.065);
+      border-color: rgba(173, 255, 232, 0.14);
+      color: var(--ink);
+      box-shadow: 0 18px 52px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(16px);
+    }
+    .metric.accent {
+      background: linear-gradient(135deg, rgba(0, 240, 189, .82), rgba(111,246,255,.28));
+      color: #06110f;
+    }
+    .terminal-card {
+      background: rgba(211, 255, 243, 0.10);
+      color: white;
+      margin-top: 18px;
+      padding: 18px;
+    }
+    .product {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(173, 255, 232, 0.14);
+      color: rgba(245,251,248,.84);
+    }
+    .receipt {
+      background: rgba(2, 11, 10, 0.82);
+      border: 1px solid rgba(173, 255, 232, 0.12);
+    }
+    .order {
+      background: rgba(255,255,255,.055);
+    }
+    section {
+      padding: 92px 0;
+      background: transparent;
+    }
+    .white {
+      background: rgba(255,255,255,.025);
+    }
+    .dark {
+      background:
+        radial-gradient(circle at 82% 0%, rgba(0,240,189,.22), transparent 28%),
+        rgba(5, 13, 12, 0.72);
+    }
+    .section-head {
+      margin-bottom: 42px;
+    }
+    .kicker {
+      color: var(--mint);
+      text-shadow: 0 0 22px rgba(0, 240, 189, 0.28);
+    }
+    .card,
+    .step,
+    .price,
+    .faq,
+    .industry,
+    .form,
+    .contact-card,
+    .video-wrap {
+      border-radius: 34px;
+    }
+    .card,
+    .step,
+    .price,
+    .faq {
+      padding: 28px;
+    }
+    .icon,
+    .step::before,
+    .feature-row .mini {
+      border-radius: 50%;
+      background: rgba(0, 240, 189, 0.09);
+      color: var(--mint);
+      border: 1px solid rgba(0, 240, 189, 0.22);
+      box-shadow: 0 0 28px rgba(0, 240, 189, 0.18);
+    }
+    .video-wrap {
+      padding: 18px;
+      background: rgba(9, 22, 20, 0.86);
+      border: 1px solid rgba(173, 255, 232, 0.14);
+      box-shadow: 0 36px 100px rgba(0,0,0,.38), 0 0 80px rgba(0,240,189,.10);
+    }
+    video { border-radius: 26px; }
+    .industry {
+      min-height: 142px;
+      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+    }
+    .industry span:first-child {
+      color: var(--mint);
+      text-shadow: 0 0 24px rgba(0,240,189,.32);
+    }
+    .feature-row {
+      border-radius: 30px;
+      background: rgba(255,255,255,.06);
+      border-color: rgba(173,255,232,.14);
+    }
+    .price.featured {
+      border-color: rgba(0, 240, 189, 0.46);
+      box-shadow: 0 32px 90px rgba(0,0,0,.34), 0 0 70px rgba(0,240,189,.16);
+    }
+    .tag {
+      background: var(--mint);
+      color: #06110f;
+      box-shadow: 0 0 24px rgba(0,240,189,.24);
+    }
+    .contact-card {
+      background:
+        radial-gradient(circle at 92% 12%, rgba(111,246,255,.22), transparent 34%),
+        radial-gradient(circle at 0% 100%, rgba(0,240,189,.16), transparent 34%),
+        rgba(7, 18, 16, .88);
+      border: 1px solid rgba(173, 255, 232, 0.14);
+      box-shadow: var(--shadow);
+    }
+    .contact-links a,
+    .contact-links div,
+    input,
+    select,
+    textarea {
+      background: rgba(255,255,255,.07);
+      border-color: rgba(173, 255, 232, 0.14);
+      color: white;
+    }
+    input::placeholder,
+    textarea::placeholder { color: rgba(245,251,248,.46); }
+    footer {
+      background: #101b1a;
+      border-top: 1px solid rgba(173, 255, 232, 0.10);
+    }
+    .ai-toggle {
+      background: linear-gradient(135deg, #00f0bd, #78fff1);
+      color: #06110f;
+      box-shadow: 0 0 28px rgba(0, 240, 189, 0.36);
+    }
+    .ai-panel {
+      background: #12201e;
+      border-color: rgba(173, 255, 232, 0.16);
+      color: white;
+    }
+    .ai-head { background: #071614; }
+    .msg.bot,
+    .ai-result {
+      background: rgba(255,255,255,.08);
+      color: white;
+      border: 1px solid rgba(173, 255, 232, 0.12);
+    }
+    .ai-options button,
+    .ai-reset {
+      background: rgba(255,255,255,.07);
+      border-color: rgba(173, 255, 232, 0.14);
+      color: white;
+    }
+    .wa {
+      background: #00f0bd;
+      color: #06110f;
+      box-shadow: 0 0 30px rgba(0,240,189,.42);
+    }
+
+    @media (max-width: 940px) {
+      .topbar { width: min(100% - 28px, 1240px); margin-top: 14px; border-radius: 24px; }
+      .nav { padding: 12px 14px; }
+      .hero-grid { padding-top: 54px; }
+      .hero::before { top: 40px; font-size: clamp(44px, 14vw, 92px); }
+      .hero-grid, .feature-band, .split { grid-template-columns: 1fr; }
+      .grid, .steps, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .grid4 { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav { flex-wrap: wrap; padding: 12px 0; }
+      .menu { order: 3; width: 100%; overflow-x: auto; padding-bottom: 2px; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .hero { padding: 30px 0 48px; min-height: auto; }
+      .hero-grid { padding-top: 34px; gap: 28px; }
+      .hero::before { top: 92px; opacity: .7; }
+      h1 { font-size: 40px; line-height: 1; letter-spacing: 0; }
+      h2 { font-size: 30px; }
+      section { padding: 54px 0; }
+      .actions .btn { width: 100%; }
+      .grid, .grid4, .steps, .pricing-grid, .footer-grid, .dash-grid, .terminal-screen { grid-template-columns: 1fr; }
+      .dashboard { min-height: 0; }
+      .hero-panel { border-radius: 30px; padding: 10px; }
+      .dashboard { border-radius: 22px; padding: 16px; }
+      .card, .step, .price, .faq, .industry, .form, .contact-card, .video-wrap { border-radius: 22px; }
+      .price.featured { transform: none; }
+      .video-cap { display: block; }
+      .wa { right: 14px; bottom: 14px; width: 50px; height: 50px; }
+      .ai-toggle { right: 14px; bottom: 76px; }
+      .ai-panel { right: 14px; bottom: 132px; }
+    }
   </style>
 </head>
 <body>
   <div class="intro" id="intro">
     <div class="intro-card">
-      <img class="intro-logo" src="assets/logo/tech-tree.png" alt="CIA SOFT" onerror="this.style.display='none';document.getElementById('fallbackLogo').style.display='block'" />
-      <div class="fallback-logo" id="fallbackLogo">✦</div>
+      <div class="intro-mark">CIA</div>
       <h1>CIA SOFT</h1>
       <p data-i18n="introText">Restaurant Automation & AI</p>
-      <button class="intro-start" id="introStart" type="button" data-i18n="introStart">Начать</button>
+      <button class="btn primary" id="introStart" type="button" data-i18n="introStart">Начать</button>
     </div>
   </div>
 
-  <header class="topbar"><div class="container nav"><a class="brand" href="#top">CIA SOFT<span>RESTAURANT AUTOMATION</span></a><nav class="menu"><a href="#solutions" data-i18n="navSolutions">Решения</a><a href="#industries" data-i18n="navIndustries">Для кого</a><a href="#demo" data-i18n="navDemo">Демо</a><a href="#pricing" data-i18n="navPricing">Тарифы</a><a href="#contact" class="nav-cta" data-i18n="navContact">Связаться</a></nav><div class="langs"><button type="button" data-lang="hy">Հայ</button><button type="button" data-lang="ru">Рус</button><button type="button" data-lang="en">EN</button></div></div></header>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark">CIA</span>
+        <span>CIA SOFT<small>Restaurant automation</small></span>
+      </a>
+      <nav class="menu">
+        <a href="#solutions" data-i18n="navSolutions">Решения</a>
+        <a href="#industries" data-i18n="navIndustries">Для кого</a>
+        <a href="#demo" data-i18n="navDemo">Демо</a>
+        <a href="#pricing" data-i18n="navPricing">Тарифы</a>
+        <a href="#contact" data-i18n="navContact">Контакты</a>
+      </nav>
+      <div class="langs" aria-label="Language">
+        <button type="button" data-lang="hy">Հայ</button>
+        <button type="button" data-lang="ru">Рус</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
 
   <main id="top">
-    <section class="hero"><div class="container hero-grid"><div><div class="eyebrow" data-i18n="eyebrow">Premium POS automation for Armenia</div><h1 data-i18n="heroTitle">Автоматизация ресторана, которая выглядит и работает профессионально</h1><p data-i18n="heroText">CIA SOFT подключает Poster POS, HDM-фискализацию, QR-оплаты, сервисный процент, отчёты и обучение персонала — чтобы владелец контролировал бизнес, а команда работала быстрее.</p><div class="actions"><a class="btn primary" href="tel:+37498615005" data-i18n="heroCta">Получить консультацию</a><a class="btn secondary" href="https://wa.me/37498615005" data-i18n="waBtn">Написать в WhatsApp</a></div><div class="hero-note" data-i18n="heroNote">Быстрый запуск для ресторанов, кафе, шаурмичных, баров, фудкортов и доставки.</div><div class="badges"><span class="badge">Poster POS</span><span class="badge gold" data-i18n="badgeHdm">HDM фискализация</span><span class="badge gold">QR / Prepayment</span></div><div class="trust"><div><strong data-i18n="trust1">1–3 дня</strong><span data-i18n="trust1Text">типовой запуск точки</span></div><div><strong>HDM + POS</strong><span data-i18n="trust2Text">чеки, возвраты, архив</span></div><div><strong>Support</strong><span data-i18n="trust3Text">обучение и сопровождение</span></div></div></div><div class="device"><div class="float-card f1"><small data-i18n="todaySales">Сегодня продажи</small>284 500 ֏</div><div class="float-card f2"><small data-i18n="status">Статус</small>HDM Ready</div><div class="float-card f3"><small>AI / QR / Support</small>CIA SOFT</div><div class="tablet"><div class="screen"><div class="screen-head"><div><strong>CIA SOFT Dashboard</strong><br><small>Restaurant control panel • Yerevan</small></div><div class="online">Online</div></div><div class="stats"><div class="stat"><span data-i18n="sales">Продажи</span><strong>284 500 ֏</strong></div><div class="stat"><span data-i18n="orders">Заказы</span><strong>126</strong></div></div><div class="row"><span data-i18n="dash1">Стол 7 • Сервис 10%</span><span class="pill">HDM</span></div><div class="row"><span data-i18n="dash2">QR предоплата • Доставка</span><span class="pill">Paid</span></div><div class="row"><span data-i18n="dash3">Повторная печать • Архив</span><span class="pill">Ready</span></div></div></div></div></div></section>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" data-i18n="eyebrow">Premium POS automation for Armenia</div>
+          <h1 data-i18n="heroTitle">Современная касса для ресторана, доставки и сети точек</h1>
+          <p class="hero-text" data-i18n="heroText">CIA SOFT внедряет Poster POS, HDM-фискализацию, QR-оплаты, сервисный процент, отчеты и обучение персонала. Владелец видит цифры, команда работает быстрее, гости получают нормальный сервис.</p>
+          <div class="actions">
+            <a class="btn primary" href="tel:+37498615005" data-i18n="heroCta">Получить консультацию</a>
+            <a class="btn secondary" href="https://wa.me/37498615005" data-i18n="waBtn">Написать в WhatsApp</a>
+          </div>
+          <div class="chips">
+            <span class="chip">Poster POS</span>
+            <span class="chip" data-i18n="badgeHdm">HDM фискализация</span>
+            <span class="chip">QR / Prepayment</span>
+            <span class="chip">AI consultant</span>
+          </div>
+        </div>
 
-    <section id="demo" class="white"><div class="container"><div class="section-head"><div class="kicker" data-i18n="videoKicker">Демо</div><h2 data-i18n="videoTitle">Посмотрите CIA SOFT в работе</h2><p class="lead" data-i18n="videoLead">Короткая демонстрация показывает, как выглядит система и как она помогает заведению работать быстрее и понятнее.</p></div><div class="video-wrap"><video controls muted playsinline preload="metadata"><source src="assets/video/demo.mp4" type="video/mp4"></video><div class="video-cap"><strong data-i18n="videoCap1">Реальная демонстрация продукта</strong><span>POS • HDM • QR • Support</span></div></div></div></section>
+        <div class="hero-panel" aria-label="CIA SOFT dashboard preview">
+          <div class="dashboard">
+            <div class="dash-top">
+              <div>
+                <strong>CIA SOFT Control</strong><br />
+                <span style="color:rgba(255,255,255,.62)">Yerevan • Live shift</span>
+              </div>
+              <div class="status">HDM Ready</div>
+            </div>
+            <div class="dash-grid">
+              <div class="metric accent"><span data-i18n="todaySales">Сегодня продажи</span><strong>284 500 ֏</strong></div>
+              <div class="metric"><span data-i18n="orders">Заказы</span><strong>126</strong></div>
+            </div>
+            <div class="terminal-card">
+              <div class="terminal-head">
+                <strong>Poster terminal</strong>
+                <span class="status" style="background:#e8fff5;color:#07503b">Online</span>
+              </div>
+              <div class="terminal-screen">
+                <div class="product-list">
+                  <div class="product"><span>Chicken shawarma</span><b>1 600 ֏</b></div>
+                  <div class="product"><span>Americano</span><b>900 ֏</b></div>
+                  <div class="product"><span>Service 10%</span><b>250 ֏</b></div>
+                </div>
+                <div class="receipt">
+                  <div><span>Subtotal</span><span>2 500 ֏</span></div>
+                  <div><span>HDM</span><strong>Ready</strong></div>
+                  <div><span>QR</span><strong>Paid</strong></div>
+                </div>
+              </div>
+            </div>
+            <div class="order"><span data-i18n="dash1">Стол 7 • сервис 10%</span><b>HDM чек</b></div>
+            <div class="order"><span data-i18n="dash2">QR предоплата • доставка</span><b>Paid</b></div>
+            <div class="order"><span data-i18n="dash3">Повторная печать • архив</span><b>Ready</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section id="solutions" class="white"><div class="container"><div class="section-head"><div class="kicker" data-i18n="solutions">Решения</div><h2 data-i18n="solutionsTitle">Автоматизация, которая работает в реальном ресторане</h2><p class="lead" data-i18n="solutionsLead">Мы не просто устанавливаем программу. Настраиваем процесс под официантов, кассу, кухню, владельца и фискальные требования.</p></div><div class="grid"><div class="card"><div class="icon">🧾</div><h3 data-i18n="hdmTitle">HDM фискализация</h3><p data-i18n="hdmText">Фискальные чеки, возвраты, повторная печать, архив и проверка корректной отправки данных.</p></div><div class="card"><div class="icon">🍽️</div><h3>Poster POS</h3><p data-i18n="posterText">Меню, категории, модификации, столы, сотрудники, роли и отчёты для владельца.</p></div><div class="card"><div class="icon">📱</div><h3 data-i18n="qrTitle">QR и оплаты</h3><p data-i18n="qrText">QR-сценарии, предоплаты, сервисный процент, округления и контроль оплат.</p></div><div class="card"><div class="icon">⚙️</div><h3 data-i18n="intTitle">Интеграции</h3><p data-i18n="intText">Дополнительные модули под задачи заведения.</p></div><div class="card"><div class="icon">👥</div><h3 data-i18n="trainTitle">Обучение персонала</h3><p data-i18n="trainText">Показываем кассирам и официантам, как быстро работать без ошибок.</p></div><div class="card"><div class="icon">🛟</div><h3 data-i18n="supportTitle">Поддержка</h3><p data-i18n="supportText">Помогаем после запуска: исправления, консультации и развитие.</p></div></div></div></section>
+    <section id="demo" class="white">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-i18n="videoKicker">Демо</div>
+          <h2 data-i18n="videoTitle">Посмотрите CIA SOFT в работе</h2>
+          <p class="lead" data-i18n="videoLead">Короткая демонстрация показывает, как выглядит система и как она помогает заведению работать быстрее и понятнее.</p>
+        </div>
+        <div class="video-wrap">
+          <video controls muted playsinline preload="metadata">
+            <source src="assets/video/demo.mp4" type="video/mp4" />
+          </video>
+          <div class="video-cap">
+            <strong data-i18n="videoCap1">Реальная демонстрация продукта</strong>
+            <span>POS • HDM • QR • Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section id="industries"><div class="container"><div class="section-head"><div class="kicker" data-i18n="industries">Для кого</div><h2 data-i18n="industriesTitle">Подходит для заведений, где важны скорость и контроль</h2><p class="lead" data-i18n="industriesLead">Рестораны, кофейни, шаурмичные, fast food, бары, отели, фудкорты и доставка.</p></div><div class="grid4"><div class="industry">🍽️<span data-i18n="rest">Рестораны</span></div><div class="industry">☕<span data-i18n="cafe">Кофейни</span></div><div class="industry">🥙<span data-i18n="shawarma">Шаурма</span></div><div class="industry">🍔<span>Fast Food</span></div><div class="industry">🍷<span data-i18n="bars">Бары</span></div><div class="industry">🏨<span data-i18n="hotels">Отели</span></div><div class="industry">🛒<span data-i18n="foodcourts">Фудкорты</span></div><div class="industry">🚚<span data-i18n="delivery">Доставка</span></div></div></div></section>
+    <section id="solutions">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-i18n="solutions">Решения</div>
+          <h2 data-i18n="solutionsTitle">Автоматизация, которая работает в реальном ресторане</h2>
+          <p class="lead" data-i18n="solutionsLead">Мы настраиваем процесс под официантов, кассу, кухню, владельца и фискальные требования.</p>
+        </div>
+        <div class="grid">
+          <div class="card"><div class="icon">▣</div><h3 data-i18n="hdmTitle">HDM фискализация</h3><p data-i18n="hdmText">Фискальные чеки, возвраты, повторная печать, архив и проверка отправки данных.</p></div>
+          <div class="card"><div class="icon">⌘</div><h3>Poster POS</h3><p data-i18n="posterText">Меню, категории, модификации, столы, сотрудники, роли и отчеты для владельца.</p></div>
+          <div class="card"><div class="icon">◎</div><h3 data-i18n="qrTitle">QR и оплаты</h3><p data-i18n="qrText">QR-сценарии, предоплаты, сервисный процент, округления и контроль оплат.</p></div>
+          <div class="card"><div class="icon">↗</div><h3 data-i18n="intTitle">Интеграции</h3><p data-i18n="intText">Модули для печати, мониторинга, отчетов, лояльности и внутренних процессов.</p></div>
+          <div class="card"><div class="icon">●</div><h3 data-i18n="trainTitle">Обучение персонала</h3><p data-i18n="trainText">Показываем кассирам и официантам реальные сценарии работы без ошибок.</p></div>
+          <div class="card"><div class="icon">✓</div><h3 data-i18n="supportTitle">Поддержка</h3><p data-i18n="supportText">Помогаем после запуска: исправления, консультации, развитие и аудит точки.</p></div>
+        </div>
+      </div>
+    </section>
 
-    <section class="soft"><div class="container"><div class="section-head"><div class="kicker" data-i18n="process">Подключение</div><h2 data-i18n="processTitle">Запуск без лишней сложности</h2><p class="lead" data-i18n="processLead">Сначала понимаем формат бизнеса, затем настраиваем систему, проверяем чеки и обучаем команду.</p></div><div class="grid"><div class="step"><h3 data-i18n="step1">1. Консультация</h3><p data-i18n="step1Text">Формат заведения, количество касс, сотрудников, оплат и интеграций.</p></div><div class="step"><h3 data-i18n="step2">2. Настройка</h3><p data-i18n="step2Text">Меню, роли, оплаты, HDM-сценарии и тестовые заказы.</p></div><div class="step"><h3 data-i18n="step3">3. Запуск</h3><p data-i18n="step3Text">Обучаем персонал и остаёмся на поддержке.</p></div></div></div></section>
+    <section id="industries" class="white">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-i18n="industries">Для кого</div>
+          <h2 data-i18n="industriesTitle">Для заведений, где важны скорость и контроль</h2>
+          <p class="lead" data-i18n="industriesLead">Рестораны, кофейни, шаурмичные, fast food, бары, отели, фудкорты и доставка.</p>
+        </div>
+        <div class="grid4">
+          <div class="industry"><span>01</span><span data-i18n="rest">Рестораны</span></div>
+          <div class="industry"><span>02</span><span data-i18n="cafe">Кофейни</span></div>
+          <div class="industry"><span>03</span><span data-i18n="shawarma">Шаурма</span></div>
+          <div class="industry"><span>04</span><span>Fast Food</span></div>
+          <div class="industry"><span>05</span><span data-i18n="bars">Бары</span></div>
+          <div class="industry"><span>06</span><span data-i18n="hotels">Отели</span></div>
+          <div class="industry"><span>07</span><span data-i18n="foodcourts">Фудкорты</span></div>
+          <div class="industry"><span>08</span><span data-i18n="delivery">Доставка</span></div>
+        </div>
+      </div>
+    </section>
 
-    <section class="dark"><div class="container"><div class="section-head"><div class="kicker" data-i18n="adv">Преимущество</div><h2 data-i18n="advTitle">Технический партнёр, а не просто установка POS</h2><p class="lead" data-i18n="advLead">CIA SOFT закрывает настройку, фискализацию, обучение и доработки.</p></div><div class="grid"><div class="card"><h3 data-i18n="adv1">Локальный опыт</h3><p data-i18n="adv1Text">Понимаем процессы ресторанов и кафе в Армении.</p></div><div class="card"><h3 data-i18n="adv2">Чистая настройка</h3><p data-i18n="adv2Text">Команда работает быстро, отчёты понятны.</p></div><div class="card"><h3 data-i18n="adv3">Гибкие доработки</h3><p data-i18n="adv3Text">QR, архив, печать и внутренние инструменты.</p></div></div></div></section>
+    <section class="dark">
+      <div class="container feature-band">
+        <div>
+          <div class="kicker" data-i18n="adv">Преимущество</div>
+          <h2 data-i18n="advTitle">Технический партнер, а не просто установка POS</h2>
+          <p class="lead" data-i18n="advLead">CIA SOFT закрывает настройку, фискализацию, обучение и доработки под реальные процессы бизнеса.</p>
+        </div>
+        <div class="feature-list">
+          <div class="feature-row"><div class="mini">01</div><div><strong data-i18n="adv1">Локальный опыт</strong><p data-i18n="adv1Text">Понимаем процессы ресторанов и кафе в Армении.</p></div></div>
+          <div class="feature-row"><div class="mini">02</div><div><strong data-i18n="adv2">Чистая настройка</strong><p data-i18n="adv2Text">Команда работает быстро, отчеты понятны владельцу.</p></div></div>
+          <div class="feature-row"><div class="mini">03</div><div><strong data-i18n="adv3">Гибкие доработки</strong><p data-i18n="adv3Text">QR, архив, печать, лояльность и внутренние инструменты.</p></div></div>
+        </div>
+      </div>
+    </section>
 
-    <section id="pricing"><div class="container"><div class="section-head"><div class="kicker" data-i18n="pricing">Тарифы</div><h2 data-i18n="pricingTitle">Стоимость зависит от масштаба и задач</h2><p class="lead" data-i18n="pricingLead">Точная цена зависит от количества точек, касс, интеграций и глубины настройки.</p></div><div class="grid"><div class="price"><h3>Start</h3><div class="amount">15 000 AMD</div><p data-i18n="startText">Для маленьких кафе и отдельных точек.</p><ul><li data-i18n="basePos">Базовая настройка POS</li><li data-i18n="menuCats">Меню и категории</li><li data-i18n="consult">Стартовая консультация</li></ul></div><div class="price featured"><span class="badge gold" data-i18n="popular">Популярный</span><h3>Business</h3><div class="amount">30 000 AMD</div><p data-i18n="businessText">Для ресторанов, кафе и фудкортов.</p><ul><li data-i18n="posSetup">POS настройка</li><li data-i18n="hdmInt">HDM интеграция</li><li data-i18n="returns">Возвраты и повторная печать</li><li data-i18n="priority">Приоритетная поддержка</li></ul></div><div class="price"><h3>Pro</h3><div class="amount">50 000 AMD+</div><p data-i18n="proText">Для нескольких точек и сложных процессов.</p><ul><li data-i18n="advanced">Расширенная автоматизация</li><li data-i18n="custom">Индивидуальные модули</li><li data-i18n="personal">Персональное сопровождение</li></ul></div></div></div></section>
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-i18n="process">Подключение</div>
+          <h2 data-i18n="processTitle">Запуск без лишней сложности</h2>
+          <p class="lead" data-i18n="processLead">Сначала понимаем формат бизнеса, затем настраиваем систему, проверяем чеки и обучаем команду.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><h3 data-i18n="step1">Консультация</h3><p data-i18n="step1Text">Формат заведения, количество касс, сотрудников, оплат и интеграций.</p></div>
+          <div class="step"><h3 data-i18n="step2">Настройка</h3><p data-i18n="step2Text">Меню, роли, оплаты, HDM-сценарии и тестовые заказы.</p></div>
+          <div class="step"><h3 data-i18n="step3">Запуск</h3><p data-i18n="step3Text">Обучаем персонал и остаемся на поддержке.</p></div>
+        </div>
+      </div>
+    </section>
 
-    <section class="soft"><div class="container"><div class="section-head"><div class="kicker">FAQ</div><h2 data-i18n="faq">Частые вопросы</h2></div><div class="grid"><div class="faq"><h3 data-i18n="faq1">Можно подключить HDM?</h3><p data-i18n="faq1Text">Да, настраиваем фискальные чеки, возвраты и повторную печать.</p></div><div class="faq"><h3 data-i18n="faq2">Вы обучаете персонал?</h3><p data-i18n="faq2Text">Да, показываем реальные сценарии работы.</p></div><div class="faq"><h3 data-i18n="faq3">Можно сделать доработку?</h3><p data-i18n="faq3Text">Да, если нужен отдельный модуль, QR или отчёт.</p></div></div></div></section>
+    <section id="pricing" class="white">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-i18n="pricing">Тарифы</div>
+          <h2 data-i18n="pricingTitle">Стоимость зависит от масштаба и задач</h2>
+          <p class="lead" data-i18n="pricingLead">Точная цена зависит от количества точек, касс, интеграций и глубины настройки.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="price">
+            <h3>Start</h3>
+            <p data-i18n="startText">Для маленьких кафе и отдельных точек.</p>
+            <div class="amount">от $199</div>
+            <ul><li data-i18n="basePos">Базовая настройка POS</li><li data-i18n="menuCats">Меню и категории</li><li data-i18n="consult">Стартовая консультация</li></ul>
+          </div>
+          <div class="price featured">
+            <span class="tag" data-i18n="popular">Популярный</span>
+            <h3>Business</h3>
+            <p data-i18n="businessText">Для ресторанов, кафе и фудкортов.</p>
+            <div class="amount">от $399</div>
+            <ul><li data-i18n="posSetup">POS настройка</li><li data-i18n="hdmInt">HDM интеграция</li><li data-i18n="returns">Возвраты и повторная печать</li><li data-i18n="priority">Приоритетная поддержка</li></ul>
+          </div>
+          <div class="price">
+            <h3>Pro</h3>
+            <p data-i18n="proText">Для нескольких точек и сложных процессов.</p>
+            <div class="amount">по запросу</div>
+            <ul><li data-i18n="advanced">Расширенная автоматизация</li><li data-i18n="custom">Индивидуальные модули</li><li data-i18n="personal">Персональное сопровождение</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section id="contact"><div class="container split"><div class="contact-card"><h2 data-i18n="contactTitle">Готовы автоматизировать заведение?</h2><p data-i18n="contactText">Напишите или позвоните. Обсудим формат бизнеса и подберём правильный сценарий подключения.</p><a href="tel:+37498615005">☎ 098 61 50 05</a><a href="https://wa.me/37498615005">💬 WhatsApp</a><a href="https://cia-soft.am">🌐 CIA-SOFT.AM</a><div data-i18n="location">📍 Армения, Ереван</div></div><form class="form" action="mailto:ciamobilearm@gmail.com" method="post" enctype="text/plain"><input name="name" data-i18n-placeholder="namePh" placeholder="Ваше имя"><input name="phone" data-i18n-placeholder="phonePh" placeholder="Телефон"><select name="business"><option data-i18n="businessType">Тип бизнеса</option><option data-i18n="rest">Ресторан</option><option data-i18n="cafe">Кафе</option><option>Fast Food</option><option data-i18n="foodcourts">Фудкорт</option><option data-i18n="other">Другое</option></select><textarea name="message" data-i18n-placeholder="msgPh" placeholder="Что нужно автоматизировать?"></textarea><button class="btn primary" type="submit" data-i18n="send">Отправить заявку</button><div class="note" data-i18n="formNote">Форма откроет почтовое приложение. Быстрее всего — написать в WhatsApp.</div></form></div></section>
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-i18n="faq">Частые вопросы</div>
+          <h2 data-i18n="faqTitle">Перед запуском обычно спрашивают это</h2>
+        </div>
+        <div class="grid">
+          <div class="faq"><h3 data-i18n="faq1">Можно подключить HDM?</h3><p data-i18n="faq1Text">Да, настраиваем фискальные чеки, возвраты и повторную печать.</p></div>
+          <div class="faq"><h3 data-i18n="faq2">Вы обучаете персонал?</h3><p data-i18n="faq2Text">Да, показываем реальные сценарии работы.</p></div>
+          <div class="faq"><h3 data-i18n="faq3">Можно сделать доработку?</h3><p data-i18n="faq3Text">Да, если нужен отдельный модуль, QR или отчет.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="white">
+      <div class="container split">
+        <div class="contact-card">
+          <h2 data-i18n="contactTitle">Готовы автоматизировать заведение?</h2>
+          <p data-i18n="contactText">Напишите или позвоните. Обсудим формат бизнеса и подберем правильный сценарий подключения.</p>
+          <div class="contact-links">
+            <a href="tel:+37498615005">098 61 50 05</a>
+            <a href="https://wa.me/37498615005">WhatsApp</a>
+            <a href="mailto:ciamobilearm@gmail.com">ciamobilearm@gmail.com</a>
+            <div data-i18n="location">Армения, Ереван</div>
+          </div>
+        </div>
+        <form class="form" action="mailto:ciamobilearm@gmail.com" method="post" enctype="text/plain">
+          <input name="name" data-i18n-placeholder="namePh" placeholder="Ваше имя" />
+          <input name="phone" data-i18n-placeholder="phonePh" placeholder="Телефон" />
+          <select name="business">
+            <option data-i18n="businessType">Тип бизнеса</option>
+            <option data-i18n="rest">Ресторан</option>
+            <option data-i18n="cafe">Кафе</option>
+            <option>Fast Food</option>
+            <option data-i18n="foodcourts">Фудкорт</option>
+            <option data-i18n="other">Другое</option>
+          </select>
+          <textarea name="message" data-i18n-placeholder="msgPh" placeholder="Что нужно автоматизировать?"></textarea>
+          <button class="btn primary" type="submit" data-i18n="send">Отправить заявку</button>
+          <div class="note" data-i18n="formNote">Форма откроет почтовое приложение. Быстрее всего - написать в WhatsApp.</div>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <footer><div class="container footer-grid"><div><div class="footer-logo">CIA SOFT</div><p data-i18n="footerText">POS автоматизация ресторанов, кафе, фудкортов и доставки в Армении.</p></div><div><strong data-i18n="footerSite">Сайт</strong><a href="#solutions" data-i18n="navSolutions">Решения</a><a href="#industries" data-i18n="navIndustries">Для кого</a><a href="#pricing" data-i18n="navPricing">Тарифы</a></div><div><strong data-i18n="footerServices">Услуги</strong><a href="#solutions">Poster POS</a><a href="#solutions">HDM</a><a href="#solutions">QR</a></div><div><strong data-i18n="footerContacts">Контакты</strong><a href="tel:+37498615005">098 61 50 05</a><a href="https://wa.me/37498615005">WhatsApp</a><a href="mailto:ciamobilearm@gmail.com">ciamobilearm@gmail.com</a></div></div></footer>
+  <footer>
+    <div class="container footer-grid">
+      <div><div class="footer-logo">CIA SOFT</div><p data-i18n="footerText">POS автоматизация ресторанов, кафе, фудкортов и доставки в Армении.</p></div>
+      <div><strong data-i18n="footerSite">Сайт</strong><a href="#solutions" data-i18n="navSolutions">Решения</a><a href="#industries" data-i18n="navIndustries">Для кого</a><a href="#pricing" data-i18n="navPricing">Тарифы</a></div>
+      <div><strong data-i18n="footerServices">Услуги</strong><a href="#solutions">Poster POS</a><a href="#solutions">HDM</a><a href="#solutions">QR</a></div>
+      <div><strong data-i18n="footerContacts">Контакты</strong><a href="tel:+37498615005">098 61 50 05</a><a href="https://wa.me/37498615005">WhatsApp</a><a href="mailto:ciamobilearm@gmail.com">ciamobilearm@gmail.com</a></div>
+    </div>
+  </footer>
 
-  <a class="wa" href="https://wa.me/37498615005">☏</a>
-  <button class="ai-toggle" id="aiToggle" type="button" data-i18n="aiToggle">🤖 AI консультант</button>
-  <div class="ai-panel" id="aiPanel"><div class="ai-head"><div><strong data-i18n="aiTitle">AI консультант CIA SOFT</strong><br><small data-i18n="aiSub">Подберу POS-решение за 1 минуту</small></div><button class="ai-close" id="aiClose" type="button">×</button></div><div class="ai-body" id="aiBody"></div></div>
+  <button class="ai-toggle" id="aiToggle" type="button" data-i18n="aiToggle">AI консультант</button>
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-head">
+      <div><strong data-i18n="aiTitle">CIA SOFT AI консультант</strong><p data-i18n="aiSub">Подберу POS-решение за 1 минуту</p></div>
+      <button class="ai-close" id="aiClose" type="button" aria-label="Close">×</button>
+    </div>
+    <div class="ai-body" id="aiBody"></div>
+  </div>
+  <a class="wa" href="https://wa.me/37498615005" aria-label="WhatsApp">WA</a>
 
   <script>
-    const dict={
-      ru:{introText:'Restaurant Automation & AI',introStart:'Начать',navSolutions:'Решения',navIndustries:'Для кого',navDemo:'Демо',navPricing:'Тарифы',navContact:'Связаться',eyebrow:'Premium POS automation for Armenia',heroTitle:'Автоматизация ресторана, которая выглядит и работает профессионально',heroText:'CIA SOFT подключает Poster POS, HDM-фискализацию, QR-оплаты, сервисный процент, отчёты и обучение персонала — чтобы владелец контролировал бизнес, а команда работала быстрее.',heroCta:'Получить консультацию',waBtn:'Написать в WhatsApp',heroNote:'Быстрый запуск для ресторанов, кафе, шаурмичных, баров, фудкортов и доставки.',badgeHdm:'HDM фискализация',trust1:'1–3 дня',trust1Text:'типовой запуск точки',trust2Text:'чеки, возвраты, архив',trust3Text:'обучение и сопровождение',todaySales:'Сегодня продажи',status:'Статус',sales:'Продажи',orders:'Заказы',dash1:'Стол 7 • Сервис 10%',dash2:'QR предоплата • Доставка',dash3:'Повторная печать • Архив',videoKicker:'Демо',videoTitle:'Посмотрите CIA SOFT в работе',videoLead:'Короткая демонстрация показывает, как выглядит система и как она помогает заведению работать быстрее и понятнее.',videoCap1:'Реальная демонстрация продукта',solutions:'Решения',solutionsTitle:'Автоматизация, которая работает в реальном ресторане',solutionsLead:'Мы не просто устанавливаем программу. Настраиваем процесс под официантов, кассу, кухню, владельца и фискальные требования.',hdmTitle:'HDM фискализация',hdmText:'Фискальные чеки, возвраты, повторная печать, архив и проверка корректной отправки данных.',posterText:'Меню, категории, модификации, столы, сотрудники, роли и отчёты для владельца.',qrTitle:'QR и оплаты',qrText:'QR-сценарии, предоплаты, сервисный процент, округления и контроль оплат.',intTitle:'Интеграции',intText:'Дополнительные модули под задачи заведения.',trainTitle:'Обучение персонала',trainText:'Показываем кассирам и официантам, как быстро работать без ошибок.',supportTitle:'Поддержка',supportText:'Помогаем после запуска: исправления, консультации и развитие.',industries:'Для кого',industriesTitle:'Подходит для заведений, где важны скорость и контроль',industriesLead:'Рестораны, кофейни, шаурмичные, fast food, бары, отели, фудкорты и доставка.',rest:'Рестораны',cafe:'Кофейни',shawarma:'Шаурма',bars:'Бары',hotels:'Отели',foodcourts:'Фудкорты',delivery:'Доставка',process:'Подключение',processTitle:'Запуск без лишней сложности',processLead:'Сначала понимаем формат бизнеса, затем настраиваем систему, проверяем чеки и обучаем команду.',step1:'1. Консультация',step1Text:'Формат заведения, количество касс, сотрудников, оплат и интеграций.',step2:'2. Настройка',step2Text:'Меню, роли, оплаты, HDM-сценарии и тестовые заказы.',step3:'3. Запуск',step3Text:'Обучаем персонал и остаёмся на поддержке.',adv:'Преимущество',advTitle:'Технический партнёр, а не просто установка POS',advLead:'CIA SOFT закрывает настройку, фискализацию, обучение и доработки.',adv1:'Локальный опыт',adv1Text:'Понимаем процессы ресторанов и кафе в Армении.',adv2:'Чистая настройка',adv2Text:'Команда работает быстро, отчёты понятны.',adv3:'Гибкие доработки',adv3Text:'QR, архив, печать и внутренние инструменты.',pricing:'Тарифы',pricingTitle:'Стоимость зависит от масштаба и задач',pricingLead:'Точная цена зависит от количества точек, касс, интеграций и глубины настройки.',startText:'Для маленьких кафе и отдельных точек.',businessText:'Для ресторанов, кафе и фудкортов.',proText:'Для нескольких точек и сложных процессов.',basePos:'Базовая настройка POS',menuCats:'Меню и категории',consult:'Стартовая консультация',popular:'Популярный',posSetup:'POS настройка',hdmInt:'HDM интеграция',returns:'Возвраты и повторная печать',priority:'Приоритетная поддержка',advanced:'Расширенная автоматизация',custom:'Индивидуальные модули',personal:'Персональное сопровождение',faq:'Частые вопросы',faq1:'Можно подключить HDM?',faq1Text:'Да, настраиваем фискальные чеки, возвраты и повторную печать.',faq2:'Вы обучаете персонал?',faq2Text:'Да, показываем реальные сценарии работы.',faq3:'Можно сделать доработку?',faq3Text:'Да, если нужен отдельный модуль, QR или отчёт.',contactTitle:'Готовы автоматизировать заведение?',contactText:'Напишите или позвоните. Обсудим формат бизнеса и подберём правильный сценарий подключения.',location:'📍 Армения, Ереван',namePh:'Ваше имя',phonePh:'Телефон',businessType:'Тип бизнеса',other:'Другое',msgPh:'Что нужно автоматизировать?',send:'Отправить заявку',formNote:'Форма откроет почтовое приложение. Быстрее всего — написать в WhatsApp.',footerText:'POS автоматизация ресторанов, кафе, фудкортов и доставки в Армении.',footerSite:'Сайт',footerServices:'Услуги',footerContacts:'Контакты',aiToggle:'🤖 AI консультант',aiTitle:'AI консультант CIA SOFT',aiSub:'Подберу POS-решение за 1 минуту',aiHello:'Здравствуйте! Я AI-консультант CIA SOFT. Помогу подобрать POS-решение.',aiBusiness:'Какой у вас бизнес?',aiCash:'Сколько касс нужно подключить?',aiHdm:'Нужна ли HDM фискализация?',aiQr:'Нужны QR-оплаты или интеграции?',aiResult:'Рекомендация',aiLead:'Могу отправить заявку в WhatsApp с вашими ответами.',aiSend:'Отправить в WhatsApp',aiAgain:'Пройти заново'},
-      hy:{introText:'Restaurant Automation & AI',introStart:'Սկսել',navSolutions:'Լուծումներ',navIndustries:'Ում համար',navDemo:'Դեմո',navPricing:'Գներ',navContact:'Կապ',eyebrow:'Premium POS ավտոմատացում Հայաստանում',heroTitle:'Ռեստորանի ավտոմատացում, որը պրոֆեսիոնալ տեսք ունի և ճիշտ է աշխատում',heroText:'CIA SOFT-ը միացնում է Poster POS, HDM ֆիսկալացում, QR վճարումներ, սպասարկման տոկոս, հաշվետվություններ և անձնակազմի ուսուցում։',heroCta:'Ստանալ խորհրդատվություն',waBtn:'Գրել WhatsApp-ում',heroNote:'Արագ մեկնարկ ռեստորանների, սրճարանների, շաուրմայի, բարերի, ֆուդքորտերի և առաքման համար։',badgeHdm:'HDM ֆիսկալացում',trust1:'1–3 օր',trust1Text:'տիպային գործարկում',trust2Text:'կտրոններ, վերադարձներ, արխիվ',trust3Text:'ուսուցում և աջակցություն',todaySales:'Այսօրվա վաճառք',status:'Կարգավիճակ',sales:'Վաճառք',orders:'Պատվերներ',dash1:'Սեղան 7 • Սերվիս 10%',dash2:'QR կանխավճար • Առաքում',dash3:'Կրկնակի տպում • Արխիվ',videoKicker:'Դեմո',videoTitle:'Տեսեք CIA SOFT-ը աշխատանքի մեջ',videoLead:'Կարճ ցուցադրությունը ցույց է տալիս, թե ինչպես է համակարգը օգնում հաստատությանը աշխատել արագ և վերահսկելի։',videoCap1:'Ապրանքի իրական ցուցադրում',solutions:'Լուծումներ',solutionsTitle:'Ավտոմատացում, որը աշխատում է իրական ռեստորանում',solutionsLead:'Մենք կարգավորում ենք գործընթացը մատուցողների, դրամարկղի, խոհանոցի, սեփականատիրոջ և ֆիսկալ պահանջների համար։',hdmTitle:'HDM ֆիսկալացում',hdmText:'Ֆիսկալ կտրոններ, վերադարձներ, կրկնակի տպում և արխիվ։',posterText:'Մենյու, կատեգորիաներ, սեղաններ, աշխատակիցներ, դերեր և հաշվետվություններ։',qrTitle:'QR և վճարումներ',qrText:'QR սցենարներ, կանխավճարներ և վճարումների վերահսկում։',intTitle:'Ինտեգրացիաներ',intText:'Տպում, մոնիտորինգ և հաշվետվություններ։',trainTitle:'Անձնակազմի ուսուցում',trainText:'Օգնում ենք թիմին արագ աշխատել առանց սխալների։',supportTitle:'Աջակցություն',supportText:'Օգնում ենք գործարկումից հետո։',industries:'Ում համար',industriesTitle:'Հարմար է բիզնեսների համար, որտեղ կարևոր են արագությունն ու վերահսկումը',industriesLead:'Ռեստորաններ, սրճարաններ, շաուրմա, fast food, բարեր, հյուրանոցներ, ֆուդքորտեր և առաքում։',rest:'Ռեստորաններ',cafe:'Սրճարաններ',shawarma:'Շաուրմա',bars:'Բարեր',hotels:'Հյուրանոցներ',foodcourts:'Ֆուդքորտեր',delivery:'Առաքում',process:'Միացում',processTitle:'Գործարկում առանց ավելորդ բարդության',processLead:'Հասկանում ենք բիզնեսը, կարգավորում համակարգը, ստուգում կտրոնները և ուսուցանում թիմին։',step1:'1. Խորհրդատվություն',step1Text:'Բիզնեսի ֆորմատ, դրամարկղեր, աշխատակիցներ և ինտեգրացիաներ։',step2:'2. Կարգավորում',step2Text:'Մենյու, դերեր, վճարումներ և HDM։',step3:'3. Գործարկում',step3Text:'Ուսուցանում ենք անձնակազմին և մնում աջակցման վրա։',adv:'Առավելություն',advTitle:'Տեխնիկական գործընկեր, ոչ թե պարզապես POS տեղադրում',advLead:'CIA SOFT-ը ապահովում է կարգավորում, ֆիսկալացում, ուսուցում և զարգացում։',adv1:'Տեղական փորձ',adv1Text:'Հասկանում ենք Հայաստանի ռեստորանային գործընթացները։',adv2:'Մաքուր կարգավորում',adv2Text:'Թիմը աշխատում է արագ, հաշվետվությունները պարզ են։',adv3:'Ճկուն զարգացում',adv3Text:'QR, արխիվ, տպում և գործիքներ։',pricing:'Գներ',pricingTitle:'Արժեքը կախված է մասշտաբից և խնդիրներից',pricingLead:'Գինը կախված է կետերի, դրամարկղերի և ինտեգրացիաների քանակից։',startText:'Փոքր սրճարանների համար։',businessText:'Ռեստորանների, սրճարանների և ֆուդքորտերի համար։',proText:'Մի քանի կետերի և բարդ գործընթացների համար։',basePos:'POS բազային կարգավորում',menuCats:'Մենյու և կատեգորիաներ',consult:'Սկզբնական խորհրդատվություն',popular:'Հաճախ ընտրվող',posSetup:'POS կարգավորում',hdmInt:'HDM ինտեգրացիա',returns:'Վերադարձներ և կրկնակի տպում',priority:'Առաջնահերթ աջակցություն',advanced:'Ընդլայնված ավտոմատացում',custom:'Անհատական մոդուլներ',personal:'Անհատական ուղեկցում',faq:'Հաճախ տրվող հարցեր',faq1:'Կարելի՞ է միացնել HDM',faq1Text:'Այո, կարգավորում ենք ֆիսկալ կտրոններ։',faq2:'Ուսուցանո՞ւմ եք անձնակազմին',faq2Text:'Այո, ցույց ենք տալիս իրական աշխատանքի սցենարները։',faq3:'Կարելի՞ է անել անհատական զարգացում',faq3Text:'Այո, եթե պետք է մոդուլ, QR կամ հաշվետվություն։',contactTitle:'Պատրա՞ստ եք ավտոմատացնել հաստատությունը',contactText:'Գրեք կամ զանգահարեք։ Կընտրենք ճիշտ միացման սցենարը։',location:'📍 Հայաստան, Երևան',namePh:'Ձեր անունը',phonePh:'Հեռախոս',businessType:'Բիզնեսի տեսակ',other:'Այլ',msgPh:'Ի՞նչ է պետք ավտոմատացնել',send:'Ուղարկել հայտը',formNote:'Ամենաարագը WhatsApp-ով գրելն է։',footerText:'POS ավտոմատացում Հայաստանում։',footerSite:'Կայք',footerServices:'Ծառայություններ',footerContacts:'Կոնտակտներ',aiToggle:'🤖 AI խորհրդատու',aiTitle:'CIA SOFT AI խորհրդատու',aiSub:'1 րոպեում կօգնեմ ընտրել POS լուծում',aiHello:'Բարև։ Կօգնեմ ընտրել POS լուծում։',aiBusiness:'Ի՞նչ բիզնես ունեք։',aiCash:'Քանի՞ դրամարկղ է պետք։',aiHdm:'Պե՞տք է HDM ֆիսկալացում։',aiQr:'Պե՞տք են QR կամ ինտեգրացիաներ։',aiResult:'Առաջարկ',aiLead:'Կարող եմ հայտը ուղարկել WhatsApp։',aiSend:'Ուղարկել WhatsApp',aiAgain:'Սկսել նորից'},
-      en:{introText:'Restaurant Automation & AI',introStart:'Start',navSolutions:'Solutions',navIndustries:'Industries',navDemo:'Demo',navPricing:'Pricing',navContact:'Contact',eyebrow:'Premium POS automation for Armenia',heroTitle:'Restaurant automation that looks and works professionally',heroText:'CIA SOFT connects Poster POS, HDM fiscalization, QR payments, service charge, reports and staff training — so owners control the business and teams work faster.',heroCta:'Get consultation',waBtn:'Message on WhatsApp',heroNote:'Fast launch for restaurants, cafés, shawarma shops, bars, food courts and delivery businesses.',badgeHdm:'HDM fiscalization',trust1:'1–3 days',trust1Text:'typical location launch',trust2Text:'receipts, returns, archive',trust3Text:'training and support',todaySales:'Today sales',status:'Status',sales:'Sales',orders:'Orders',dash1:'Table 7 • Service 10%',dash2:'QR prepayment • Delivery',dash3:'Reprint • Archive',videoKicker:'Demo',videoTitle:'See CIA SOFT in action',videoLead:'A short demo shows how the system looks and how it helps businesses work faster and with more control.',videoCap1:'Real product demonstration',solutions:'Solutions',solutionsTitle:'Automation that works in a real restaurant',solutionsLead:'We configure the process for waiters, cash desk, kitchen, owner and fiscal requirements.',hdmTitle:'HDM fiscalization',hdmText:'Fiscal receipts, returns, reprints and archive.',posterText:'Menu, categories, tables, employees, roles and reports.',qrTitle:'QR and payments',qrText:'QR flows, prepayments and payment control.',intTitle:'Integrations',intText:'Printing, monitoring and reports.',trainTitle:'Staff training',trainText:'We help the team work fast without mistakes.',supportTitle:'Support',supportText:'We help after launch.',industries:'Industries',industriesTitle:'For businesses where speed and control matter',industriesLead:'Restaurants, cafés, shawarma shops, fast food, bars, hotels, food courts and delivery.',rest:'Restaurants',cafe:'Cafés',shawarma:'Shawarma',bars:'Bars',hotels:'Hotels',foodcourts:'Food courts',delivery:'Delivery',process:'Setup',processTitle:'Launch without unnecessary complexity',processLead:'We understand your business, configure the system, test receipts and train the team.',step1:'1. Consultation',step1Text:'Business format, cash registers, employees and integrations.',step2:'2. Configuration',step2Text:'Menu, roles, payments and HDM.',step3:'3. Launch',step3Text:'We train staff and stay available for support.',adv:'Advantage',advTitle:'A technical partner, not just POS installation',advLead:'CIA SOFT handles setup, fiscalization, training and improvements.',adv1:'Local experience',adv1Text:'We understand Armenian restaurant workflows.',adv2:'Clean setup',adv2Text:'The team works fast and reports are clear.',adv3:'Flexible development',adv3Text:'QR, archive, printing and tools.',pricing:'Pricing',pricingTitle:'Cost depends on scale and tasks',pricingLead:'Final price depends on locations, cash registers and integrations.',startText:'For small cafés and single locations.',businessText:'For restaurants, cafés and food courts.',proText:'For multiple locations and complex workflows.',basePos:'Basic POS setup',menuCats:'Menu and categories',consult:'Initial consultation',popular:'Popular',posSetup:'POS setup',hdmInt:'HDM integration',returns:'Returns and reprints',priority:'Priority support',advanced:'Advanced automation',custom:'Custom modules',personal:'Personal support',faq:'FAQ',faq1:'Can you connect HDM?',faq1Text:'Yes, we configure fiscal receipts.',faq2:'Do you train staff?',faq2Text:'Yes, we show real work scenarios.',faq3:'Can you build custom features?',faq3Text:'Yes, if you need a module, QR or report.',contactTitle:'Ready to automate your business?',contactText:'Message or call us. We will choose the right setup scenario.',location:'📍 Armenia, Yerevan',namePh:'Your name',phonePh:'Phone',businessType:'Business type',other:'Other',msgPh:'What do you need to automate?',send:'Send request',formNote:'The fastest way is WhatsApp.',footerText:'POS automation in Armenia.',footerSite:'Site',footerServices:'Services',footerContacts:'Contacts',aiToggle:'🤖 AI consultant',aiTitle:'CIA SOFT AI consultant',aiSub:'I will help choose a POS solution in 1 minute',aiHello:'Hello. I will help choose a POS solution.',aiBusiness:'What business do you have?',aiCash:'How many cash registers do you need?',aiHdm:'Do you need HDM fiscalization?',aiQr:'Do you need QR or integrations?',aiResult:'Recommendation',aiLead:'I can send a WhatsApp request with your answers.',aiSend:'Send to WhatsApp',aiAgain:'Start again'}
+    const dict = {
+      ru: {
+        introText: "Restaurant Automation & AI", introStart: "Начать", navSolutions: "Решения", navIndustries: "Для кого", navDemo: "Демо", navPricing: "Тарифы", navContact: "Контакты",
+        eyebrow: "Premium POS automation for Armenia", heroTitle: "Современная касса для ресторана, доставки и сети точек", heroText: "CIA SOFT внедряет Poster POS, HDM-фискализацию, QR-оплаты, сервисный процент, отчеты и обучение персонала. Владелец видит цифры, команда работает быстрее, гости получают нормальный сервис.", heroCta: "Получить консультацию", waBtn: "Написать в WhatsApp", badgeHdm: "HDM фискализация",
+        todaySales: "Сегодня продажи", orders: "Заказы", dash1: "Стол 7 • сервис 10%", dash2: "QR предоплата • доставка", dash3: "Повторная печать • архив",
+        videoKicker: "Демо", videoTitle: "Посмотрите CIA SOFT в работе", videoLead: "Короткая демонстрация показывает, как выглядит система и как она помогает заведению работать быстрее и понятнее.", videoCap1: "Реальная демонстрация продукта",
+        solutions: "Решения", solutionsTitle: "Автоматизация, которая работает в реальном ресторане", solutionsLead: "Мы настраиваем процесс под официантов, кассу, кухню, владельца и фискальные требования.", hdmTitle: "HDM фискализация", hdmText: "Фискальные чеки, возвраты, повторная печать, архив и проверка отправки данных.", posterText: "Меню, категории, модификации, столы, сотрудники, роли и отчеты для владельца.", qrTitle: "QR и оплаты", qrText: "QR-сценарии, предоплаты, сервисный процент, округления и контроль оплат.", intTitle: "Интеграции", intText: "Модули для печати, мониторинга, отчетов, лояльности и внутренних процессов.", trainTitle: "Обучение персонала", trainText: "Показываем кассирам и официантам реальные сценарии работы без ошибок.", supportTitle: "Поддержка", supportText: "Помогаем после запуска: исправления, консультации, развитие и аудит точки.",
+        industries: "Для кого", industriesTitle: "Для заведений, где важны скорость и контроль", industriesLead: "Рестораны, кофейни, шаурмичные, fast food, бары, отели, фудкорты и доставка.", rest: "Рестораны", cafe: "Кофейни", shawarma: "Шаурма", bars: "Бары", hotels: "Отели", foodcourts: "Фудкорты", delivery: "Доставка",
+        adv: "Преимущество", advTitle: "Технический партнер, а не просто установка POS", advLead: "CIA SOFT закрывает настройку, фискализацию, обучение и доработки под реальные процессы бизнеса.", adv1: "Локальный опыт", adv1Text: "Понимаем процессы ресторанов и кафе в Армении.", adv2: "Чистая настройка", adv2Text: "Команда работает быстро, отчеты понятны владельцу.", adv3: "Гибкие доработки", adv3Text: "QR, архив, печать, лояльность и внутренние инструменты.",
+        process: "Подключение", processTitle: "Запуск без лишней сложности", processLead: "Сначала понимаем формат бизнеса, затем настраиваем систему, проверяем чеки и обучаем команду.", step1: "Консультация", step1Text: "Формат заведения, количество касс, сотрудников, оплат и интеграций.", step2: "Настройка", step2Text: "Меню, роли, оплаты, HDM-сценарии и тестовые заказы.", step3: "Запуск", step3Text: "Обучаем персонал и остаемся на поддержке.",
+        pricing: "Тарифы", pricingTitle: "Стоимость зависит от масштаба и задач", pricingLead: "Точная цена зависит от количества точек, касс, интеграций и глубины настройки.", startText: "Для маленьких кафе и отдельных точек.", businessText: "Для ресторанов, кафе и фудкортов.", proText: "Для нескольких точек и сложных процессов.", basePos: "Базовая настройка POS", menuCats: "Меню и категории", consult: "Стартовая консультация", popular: "Популярный", posSetup: "POS настройка", hdmInt: "HDM интеграция", returns: "Возвраты и повторная печать", priority: "Приоритетная поддержка", advanced: "Расширенная автоматизация", custom: "Индивидуальные модули", personal: "Персональное сопровождение",
+        faq: "Частые вопросы", faqTitle: "Перед запуском обычно спрашивают это", faq1: "Можно подключить HDM?", faq1Text: "Да, настраиваем фискальные чеки, возвраты и повторную печать.", faq2: "Вы обучаете персонал?", faq2Text: "Да, показываем реальные сценарии работы.", faq3: "Можно сделать доработку?", faq3Text: "Да, если нужен отдельный модуль, QR или отчет.",
+        contactTitle: "Готовы автоматизировать заведение?", contactText: "Напишите или позвоните. Обсудим формат бизнеса и подберем правильный сценарий подключения.", location: "Армения, Ереван", namePh: "Ваше имя", phonePh: "Телефон", businessType: "Тип бизнеса", other: "Другое", msgPh: "Что нужно автоматизировать?", send: "Отправить заявку", formNote: "Форма откроет почтовое приложение. Быстрее всего - написать в WhatsApp.", footerText: "POS автоматизация ресторанов, кафе, фудкортов и доставки в Армении.", footerSite: "Сайт", footerServices: "Услуги", footerContacts: "Контакты",
+        aiToggle: "AI консультант", aiTitle: "CIA SOFT AI консультант", aiSub: "Подберу POS-решение за 1 минуту", aiHello: "Здравствуйте! Помогу подобрать POS-решение.", aiBusiness: "Какой у вас бизнес?", aiCash: "Сколько касс нужно подключить?", aiHdm: "Нужна ли HDM фискализация?", aiQr: "Нужны QR-оплаты или интеграции?", aiResult: "Рекомендация", aiLead: "Могу отправить заявку в WhatsApp с вашими ответами.", aiSend: "Отправить в WhatsApp", aiAgain: "Пройти заново"
+      },
+      en: {
+        introText: "Restaurant Automation & AI", introStart: "Start", navSolutions: "Solutions", navIndustries: "Industries", navDemo: "Demo", navPricing: "Pricing", navContact: "Contact",
+        eyebrow: "Premium POS automation for Armenia", heroTitle: "Modern POS for restaurants, delivery and multi-location teams", heroText: "CIA SOFT deploys Poster POS, HDM fiscalization, QR payments, service charge, reports and staff training. Owners see the numbers, teams move faster and guests get better service.", heroCta: "Get consultation", waBtn: "Message on WhatsApp", badgeHdm: "HDM fiscalization",
+        todaySales: "Today sales", orders: "Orders", dash1: "Table 7 • service 10%", dash2: "QR prepayment • delivery", dash3: "Reprint • archive",
+        videoKicker: "Demo", videoTitle: "See CIA SOFT in action", videoLead: "A short demo shows how the system looks and how it helps a venue work faster and with more control.", videoCap1: "Real product demonstration",
+        solutions: "Solutions", solutionsTitle: "Automation that works in a real restaurant", solutionsLead: "We configure the process for waiters, cash desk, kitchen, owner and fiscal requirements.", hdmTitle: "HDM fiscalization", hdmText: "Fiscal receipts, returns, reprints, archive and data submission checks.", posterText: "Menu, categories, modifiers, tables, employees, roles and owner reports.", qrTitle: "QR and payments", qrText: "QR flows, prepayments, service charge, rounding and payment control.", intTitle: "Integrations", intText: "Modules for printing, monitoring, reports, loyalty and internal workflows.", trainTitle: "Staff training", trainText: "We show cashiers and waiters real work scenarios without mistakes.", supportTitle: "Support", supportText: "We help after launch with fixes, advice, growth and location audits.",
+        industries: "Industries", industriesTitle: "For venues where speed and control matter", industriesLead: "Restaurants, cafes, shawarma shops, fast food, bars, hotels, food courts and delivery.", rest: "Restaurants", cafe: "Cafes", shawarma: "Shawarma", bars: "Bars", hotels: "Hotels", foodcourts: "Food courts", delivery: "Delivery",
+        adv: "Advantage", advTitle: "A technical partner, not just POS installation", advLead: "CIA SOFT handles setup, fiscalization, training and custom improvements for real business processes.", adv1: "Local experience", adv1Text: "We understand restaurant and cafe workflows in Armenia.", adv2: "Clean setup", adv2Text: "The team works fast and reports are clear for the owner.", adv3: "Flexible development", adv3Text: "QR, archive, printing, loyalty and internal tools.",
+        process: "Setup", processTitle: "Launch without unnecessary complexity", processLead: "First we understand the business format, then configure the system, test receipts and train the team.", step1: "Consultation", step1Text: "Venue format, number of registers, employees, payments and integrations.", step2: "Configuration", step2Text: "Menu, roles, payments, HDM scenarios and test orders.", step3: "Launch", step3Text: "We train staff and stay available for support.",
+        pricing: "Pricing", pricingTitle: "Cost depends on scale and tasks", pricingLead: "Final pricing depends on locations, registers, integrations and setup depth.", startText: "For small cafes and single locations.", businessText: "For restaurants, cafes and food courts.", proText: "For multiple locations and complex workflows.", basePos: "Basic POS setup", menuCats: "Menu and categories", consult: "Initial consultation", popular: "Popular", posSetup: "POS setup", hdmInt: "HDM integration", returns: "Returns and reprints", priority: "Priority support", advanced: "Advanced automation", custom: "Custom modules", personal: "Personal support",
+        faq: "FAQ", faqTitle: "Common questions before launch", faq1: "Can you connect HDM?", faq1Text: "Yes, we configure fiscal receipts, returns and reprints.", faq2: "Do you train staff?", faq2Text: "Yes, we show real work scenarios.", faq3: "Can you build custom features?", faq3Text: "Yes, if you need a separate module, QR or report.",
+        contactTitle: "Ready to automate your venue?", contactText: "Message or call us. We will discuss your business format and choose the right setup scenario.", location: "Armenia, Yerevan", namePh: "Your name", phonePh: "Phone", businessType: "Business type", other: "Other", msgPh: "What do you need to automate?", send: "Send request", formNote: "The form opens your email app. The fastest way is WhatsApp.", footerText: "POS automation for restaurants, cafes, food courts and delivery in Armenia.", footerSite: "Site", footerServices: "Services", footerContacts: "Contacts",
+        aiToggle: "AI consultant", aiTitle: "CIA SOFT AI consultant", aiSub: "I will choose a POS solution in 1 minute", aiHello: "Hello! I can help choose a POS solution.", aiBusiness: "What business do you have?", aiCash: "How many registers do you need?", aiHdm: "Do you need HDM fiscalization?", aiQr: "Do you need QR payments or integrations?", aiResult: "Recommendation", aiLead: "I can send a WhatsApp request with your answers.", aiSend: "Send to WhatsApp", aiAgain: "Start again"
+      },
+      hy: {
+        introText: "Restaurant Automation & AI", introStart: "Սկսել", navSolutions: "Լուծումներ", navIndustries: "Ում համար", navDemo: "Դեմո", navPricing: "Գներ", navContact: "Կապ",
+        eyebrow: "Premium POS ավտոմատացում Հայաստանում", heroTitle: "Ժամանակակից դրամարկղ ռեստորանի, առաքման եւ ցանցի համար", heroText: "CIA SOFT-ը ներդնում է Poster POS, HDM ֆիսկալացում, QR վճարումներ, սպասարկման տոկոս, հաշվետվություններ եւ անձնակազմի ուսուցում։ Սեփականատերը տեսնում է թվերը, թիմը աշխատում է արագ։", heroCta: "Ստանալ խորհրդատվություն", waBtn: "Գրել WhatsApp-ում", badgeHdm: "HDM ֆիսկալացում",
+        todaySales: "Այսօրվա վաճառք", orders: "Պատվերներ", dash1: "Սեղան 7 • սերվիս 10%", dash2: "QR կանխավճար • առաքում", dash3: "Կրկնակի տպում • արխիվ",
+        videoKicker: "Դեմո", videoTitle: "Տեսեք CIA SOFT-ը աշխատանքի մեջ", videoLead: "Կարճ ցուցադրությունը ցույց է տալիս, թե ինչպես է համակարգը օգնում հաստատությանը աշխատել արագ եւ վերահսկելի։", videoCap1: "Ապրանքի իրական ցուցադրում",
+        solutions: "Լուծումներ", solutionsTitle: "Ավտոմատացում, որը աշխատում է իրական ռեստորանում", solutionsLead: "Կարգավորում ենք գործընթացը մատուցողների, դրամարկղի, խոհանոցի, սեփականատիրոջ եւ ֆիսկալ պահանջների համար։", hdmTitle: "HDM ֆիսկալացում", hdmText: "Ֆիսկալ կտրոններ, վերադարձներ, կրկնակի տպում, արխիվ եւ տվյալների ստուգում։", posterText: "Մենյու, կատեգորիաներ, սեղաններ, աշխատակիցներ, դերեր եւ հաշվետվություններ։", qrTitle: "QR եւ վճարումներ", qrText: "QR սցենարներ, կանխավճարներ, սպասարկման տոկոս եւ վճարումների վերահսկում։", intTitle: "Ինտեգրացիաներ", intText: "Մոդուլներ տպման, մոնիտորինգի, հաշվետվությունների եւ լոյալության համար։", trainTitle: "Անձնակազմի ուսուցում", trainText: "Ցույց ենք տալիս իրական աշխատանքի սցենարներ։", supportTitle: "Աջակցություն", supportText: "Օգնում ենք գործարկումից հետո՝ ուղղումներ, խորհրդատվություն եւ զարգացում։",
+        industries: "Ում համար", industriesTitle: "Հաստատությունների համար, որտեղ կարեւոր են արագությունն ու վերահսկումը", industriesLead: "Ռեստորաններ, սրճարաններ, շաուրմա, fast food, բարեր, հյուրանոցներ, ֆուդքորտեր եւ առաքում։", rest: "Ռեստորաններ", cafe: "Սրճարաններ", shawarma: "Շաուրմա", bars: "Բարեր", hotels: "Հյուրանոցներ", foodcourts: "Ֆուդքորտեր", delivery: "Առաքում",
+        adv: "Առավելություն", advTitle: "Տեխնիկական գործընկեր, ոչ թե պարզապես POS տեղադրում", advLead: "CIA SOFT-ը ապահովում է կարգավորում, ֆիսկալացում, ուսուցում եւ անհատական զարգացում։", adv1: "Տեղական փորձ", adv1Text: "Հասկանում ենք Հայաստանի ռեստորանային գործընթացները։", adv2: "Մաքուր կարգավորում", adv2Text: "Թիմը աշխատում է արագ, հաշվետվությունները պարզ են։", adv3: "Ճկուն զարգացում", adv3Text: "QR, արխիվ, տպում, լոյալություն եւ ներքին գործիքներ։",
+        process: "Միացում", processTitle: "Գործարկում առանց ավելորդ բարդության", processLead: "Սկզբում հասկանում ենք բիզնեսը, հետո կարգավորում համակարգը, ստուգում կտրոնները եւ ուսուցանում թիմին։", step1: "Խորհրդատվություն", step1Text: "Հաստատության ֆորմատ, դրամարկղեր, աշխատակիցներ, վճարումներ եւ ինտեգրացիաներ։", step2: "Կարգավորում", step2Text: "Մենյու, դերեր, վճարումներ, HDM սցենարներ եւ թեստային պատվերներ։", step3: "Գործարկում", step3Text: "Ուսուցանում ենք անձնակազմին եւ մնում աջակցման վրա։",
+        pricing: "Գներ", pricingTitle: "Արժեքը կախված է մասշտաբից եւ խնդիրներից", pricingLead: "Գինը կախված է կետերի, դրամարկղերի, ինտեգրացիաների եւ կարգավորման խորությունից։", startText: "Փոքր սրճարանների եւ մեկ կետի համար։", businessText: "Ռեստորանների, սրճարանների եւ ֆուդքորտերի համար։", proText: "Մի քանի կետերի եւ բարդ գործընթացների համար։", basePos: "POS բազային կարգավորում", menuCats: "Մենյու եւ կատեգորիաներ", consult: "Սկզբնական խորհրդատվություն", popular: "Հաճախ ընտրվող", posSetup: "POS կարգավորում", hdmInt: "HDM ինտեգրացիա", returns: "Վերադարձներ եւ կրկնակի տպում", priority: "Առաջնահերթ աջակցություն", advanced: "Ընդլայնված ավտոմատացում", custom: "Անհատական մոդուլներ", personal: "Անհատական ուղեկցում",
+        faq: "Հարցեր", faqTitle: "Հաճախ հարցնում են գործարկումից առաջ", faq1: "Կարելի՞ է միացնել HDM", faq1Text: "Այո, կարգավորում ենք ֆիսկալ կտրոններ, վերադարձներ եւ կրկնակի տպում։", faq2: "Ուսուցանո՞ւմ եք անձնակազմին", faq2Text: "Այո, ցույց ենք տալիս իրական աշխատանքի սցենարներ։", faq3: "Կարելի՞ է անել անհատական զարգացում", faq3Text: "Այո, եթե պետք է մոդուլ, QR կամ հաշվետվություն։",
+        contactTitle: "Պատրա՞ստ եք ավտոմատացնել հաստատությունը", contactText: "Գրեք կամ զանգահարեք։ Կքննարկենք բիզնեսի ֆորմատը եւ կընտրենք ճիշտ սցենարը։", location: "Հայաստան, Երեւան", namePh: "Ձեր անունը", phonePh: "Հեռախոս", businessType: "Բիզնեսի տեսակ", other: "Այլ", msgPh: "Ի՞նչ է պետք ավտոմատացնել", send: "Ուղարկել հայտը", formNote: "Ամենաարագը WhatsApp-ով գրելն է։", footerText: "POS ավտոմատացում Հայաստանում։", footerSite: "Կայք", footerServices: "Ծառայություններ", footerContacts: "Կոնտակտներ",
+        aiToggle: "AI խորհրդատու", aiTitle: "CIA SOFT AI խորհրդատու", aiSub: "1 րոպեում կօգնեմ ընտրել POS լուծում", aiHello: "Բարեւ։ Կօգնեմ ընտրել POS լուծում։", aiBusiness: "Ի՞նչ բիզնես ունեք։", aiCash: "Քանի՞ դրամարկղ է պետք։", aiHdm: "Պե՞տք է HDM ֆիսկալացում։", aiQr: "Պե՞տք են QR կամ ինտեգրացիաներ։", aiResult: "Առաջարկ", aiLead: "Կարող եմ հայտը ուղարկել WhatsApp։", aiSend: "Ուղարկել WhatsApp", aiAgain: "Սկսել նորից"
+      }
     };
-    let lang='ru';
-    const intro=document.getElementById('intro'),aiPanel=document.getElementById('aiPanel'),aiBody=document.getElementById('aiBody');
-    const aiState={business:'',cash:'',hdm:'',qr:''};
-    function tr(k){return (dict[lang]&&dict[lang][k])||dict.ru[k]||k}
-    function applyLang(next){lang=dict[next]?next:'ru';localStorage.setItem('ciaLang',lang);document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=tr(el.dataset.i18n)});document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{el.placeholder=tr(el.dataset.i18nPlaceholder)});document.querySelectorAll('.langs button').forEach(btn=>btn.classList.toggle('active',btn.dataset.lang===lang));}
-    function closeIntro(){intro.classList.add('hide');localStorage.setItem('ciaIntroSeen','1')}
-    document.getElementById('introStart').addEventListener('click',closeIntro);
-    document.querySelectorAll('.langs button').forEach(btn=>btn.addEventListener('click',()=>applyLang(btn.dataset.lang)));
-    function addMsg(text,type){const d=document.createElement('div');d.className='msg '+type;d.textContent=text;aiBody.appendChild(d);aiBody.scrollTop=aiBody.scrollHeight}
-    function opts(list,cb){const wrap=document.createElement('div');wrap.className='ai-options';list.forEach(item=>{const b=document.createElement('button');b.type='button';b.textContent=item;b.onclick=()=>{addMsg(item,'user');wrap.remove();cb(item)};wrap.appendChild(b)});aiBody.appendChild(wrap)}
-    function startAi(){aiBody.innerHTML='';addMsg(tr('aiHello'),'bot');addMsg(tr('aiBusiness'),'bot');opts([tr('rest'),tr('cafe'),tr('shawarma'),'Fast Food',tr('bars'),tr('foodcourts')],business=>{aiState.business=business;addMsg(tr('aiCash'),'bot');opts(['1','2','3+','Multi-location'],cash=>{aiState.cash=cash;addMsg(tr('aiHdm'),'bot');opts(['HDM needed','Already have HDM','Not sure'],hdm=>{aiState.hdm=hdm;addMsg(tr('aiQr'),'bot');opts(['QR / integrations','Basic POS','Need consultation'],qr=>{aiState.qr=qr;let plan='Business';if(cash==='1'&&qr==='Basic POS')plan='Start';if(cash==='3+'||cash==='Multi-location'||qr==='QR / integrations')plan='Pro';const res=document.createElement('div');res.className='ai-result';res.innerHTML='<strong>'+tr('aiResult')+': '+plan+'</strong><p>'+tr('aiLead')+'</p><button class="ai-whatsapp" type="button">'+tr('aiSend')+'</button><button class="ai-reset" type="button">'+tr('aiAgain')+'</button>';aiBody.appendChild(res);res.querySelector('.ai-whatsapp').onclick=sendLead;res.querySelector('.ai-reset').onclick=startAi})})})})}
-    function sendLead(){const text='CIA SOFT request%0A%0ABusiness: '+encodeURIComponent(aiState.business)+'%0ACash: '+encodeURIComponent(aiState.cash)+'%0AHDM: '+encodeURIComponent(aiState.hdm)+'%0AQR: '+encodeURIComponent(aiState.qr);window.open('https://wa.me/37498615005?text='+text,'_blank')}
-    document.getElementById('aiToggle').onclick=()=>{aiPanel.classList.toggle('open');if(aiPanel.classList.contains('open')&&!aiBody.innerHTML)startAi()};
-    document.getElementById('aiClose').onclick=()=>aiPanel.classList.remove('open');
-    applyLang(localStorage.getItem('ciaLang')||(['hy','ru','en'].includes((navigator.language||'ru').slice(0,2))?(navigator.language||'ru').slice(0,2):'ru'));
-    if(localStorage.getItem('ciaIntroSeen')==='1')intro.classList.add('hide');
+
+    let lang = "ru";
+    const intro = document.getElementById("intro");
+    const aiPanel = document.getElementById("aiPanel");
+    const aiBody = document.getElementById("aiBody");
+    const aiState = { business: "", cash: "", hdm: "", qr: "" };
+
+    function tr(key) {
+      return (dict[lang] && dict[lang][key]) || dict.ru[key] || key;
+    }
+
+    function applyLang(next) {
+      lang = dict[next] ? next : "ru";
+      localStorage.setItem("ciaLang", lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        el.textContent = tr(el.dataset.i18n);
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+        el.placeholder = tr(el.dataset.i18nPlaceholder);
+      });
+      document.querySelectorAll(".langs button").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+      if (aiPanel.classList.contains("open")) startAi();
+    }
+
+    function closeIntro() {
+      intro.classList.add("hide");
+      localStorage.setItem("ciaIntroSeen", "1");
+    }
+
+    function addMsg(text, type) {
+      const el = document.createElement("div");
+      el.className = "msg " + type;
+      el.textContent = text;
+      aiBody.appendChild(el);
+      aiBody.scrollTop = aiBody.scrollHeight;
+    }
+
+    function opts(list, callback) {
+      const wrap = document.createElement("div");
+      wrap.className = "ai-options";
+      list.forEach((item) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = item;
+        button.onclick = () => {
+          addMsg(item, "user");
+          wrap.remove();
+          callback(item);
+        };
+        wrap.appendChild(button);
+      });
+      aiBody.appendChild(wrap);
+    }
+
+    function startAi() {
+      aiBody.innerHTML = "";
+      addMsg(tr("aiHello"), "bot");
+      addMsg(tr("aiBusiness"), "bot");
+      opts([tr("rest"), tr("cafe"), tr("shawarma"), "Fast Food", tr("bars"), tr("foodcourts")], (business) => {
+        aiState.business = business;
+        addMsg(tr("aiCash"), "bot");
+        opts(["1", "2", "3+", "Multi-location"], (cash) => {
+          aiState.cash = cash;
+          addMsg(tr("aiHdm"), "bot");
+          opts(["HDM needed", "Already have HDM", "Not sure"], (hdm) => {
+            aiState.hdm = hdm;
+            addMsg(tr("aiQr"), "bot");
+            opts(["QR / integrations", "Basic POS", "Need consultation"], (qr) => {
+              aiState.qr = qr;
+              let plan = "Business";
+              if (cash === "1" && qr === "Basic POS") plan = "Start";
+              if (cash === "3+" || cash === "Multi-location" || qr === "QR / integrations") plan = "Pro";
+              const result = document.createElement("div");
+              result.className = "ai-result";
+              result.innerHTML = "<strong>" + tr("aiResult") + ": " + plan + "</strong><p>" + tr("aiLead") + "</p><button class=\"ai-whatsapp\" type=\"button\">" + tr("aiSend") + "</button><button class=\"ai-reset\" type=\"button\">" + tr("aiAgain") + "</button>";
+              aiBody.appendChild(result);
+              result.querySelector(".ai-whatsapp").onclick = sendLead;
+              result.querySelector(".ai-reset").onclick = startAi;
+            });
+          });
+        });
+      });
+    }
+
+    function sendLead() {
+      const text = "CIA SOFT request%0A%0ABusiness: " + encodeURIComponent(aiState.business) + "%0ACash: " + encodeURIComponent(aiState.cash) + "%0AHDM: " + encodeURIComponent(aiState.hdm) + "%0AQR: " + encodeURIComponent(aiState.qr);
+      window.open("https://wa.me/37498615005?text=" + text, "_blank");
+    }
+
+    document.getElementById("introStart").addEventListener("click", closeIntro);
+    document.querySelectorAll(".langs button").forEach((btn) => btn.addEventListener("click", () => applyLang(btn.dataset.lang)));
+    document.getElementById("aiToggle").onclick = () => {
+      aiPanel.classList.toggle("open");
+      if (aiPanel.classList.contains("open") && !aiBody.innerHTML) startAi();
+    };
+    document.getElementById("aiClose").onclick = () => aiPanel.classList.remove("open");
+
+    const browserLang = (navigator.language || "ru").slice(0, 2);
+    applyLang(localStorage.getItem("ciaLang") || (["hy", "ru", "en"].includes(browserLang) ? browserLang : "ru"));
+    if (localStorage.getItem("ciaIntroSeen") === "1") intro.classList.add("hide");
   </script>
 </body>
 </html>
