@@ -35,3 +35,6 @@
 [data-theme="light"] footer{color:#647482}
 [data-theme="light"] .detail .art{border-color:var(--line)}
 @media(max-width:620px){.theme-toggle{padding:7px 9px;font-size:11px}}
+
+.lang-link{font-size:11px!important;opacity:.72}.lang-link:hover{opacity:1}
+@media(max-width:620px){.navlinks{gap:8px}.navlinks .lang-link{font-size:10px!important}.navlinks a:nth-child(3){display:none}.theme-toggle{padding:7px 8px;font-size:10px}}
