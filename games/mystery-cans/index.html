@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080b10"><meta name="description" content="Mystery Cans is an upcoming relaxing indie game about opening mysterious containers, discovering objects and restoring a magical clock."><link rel="canonical" href="https://shant761.github.io/games/mystery-cans/"><link rel="alternate" hreflang="en" href="https://shant761.github.io/games/mystery-cans/"><link rel="alternate" hreflang="hy" href="https://shant761.github.io/hy/games/mystery-cans/"><link rel="alternate" hreflang="ru" href="https://shant761.github.io/ru/games/mystery-cans/"><meta property="og:title" content="Mystery Cans — CIA inc."><meta property="og:description" content="Open mysterious cans. Discover lost parts. Restore an ancient clock."><title>Mystery Cans — CIA inc.</title><link rel="stylesheet" href="/assets/site.css"><link rel="icon" href="/favicon.svg"></head><body><header class="top"><div class="wrap nav"><a class="logo" href="/">CIA <b>inc.</b></a><nav class="navlinks"><a href="/#games">Games</a><a href="/#studio">Studio</a><a href="/#contact">Contact</a><a class="lang-link" href="/games/mystery-cans/">EN</a><a class="lang-link" href="/hy/games/mystery-cans/">HY</a><a class="lang-link" href="/ru/games/mystery-cans/">RU</a><button class="theme-toggle" type="button">☀ Light</button></nav></div></header><main><div class="pagehero"><div class="wrap"><div class="eyebrow">CIA inc. · Upcoming game</div><h1>Mystery Cans</h1><p>A quiet world of strange containers, forgotten objects and a clock waiting to be restored.</p></div></div><section class="video-section"><div class="wrap"><div class="video-heading"><div class="eyebrow">Mystery Cans · Trailer</div><h2>Watch the Mystery Cans trailer</h2></div><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/AET6TowIo5s" title="Mystery Cans official trailer" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><a class="trailer-link" href="https://youtu.be/AET6TowIo5s" target="_blank" rel="noopener">Open trailer on YouTube ↗</a></div></section><section><div class="wrap detail"><figure class="game-preview"><img src="/assets/mystery-cans-art.svg" alt="Original Mystery Cans promotional artwork showing a mysterious can and antique clock"><figcaption>Original promotional artwork created for Mystery Cans — not a gameplay screenshot.</figcaption></figure><div><span class="status">In development · PC</span><h2>Every can hides a little mystery.</h2><p>Open containers, discover unexpected objects, sort valuable finds and uncover pieces of an ancient magical clock. Build your collection and slowly bring the clock back to life.</p><p>Mystery Cans is being developed as a relaxing, curiosity-driven indie experience for PC.</p><p><strong>Platform:</strong> PC / Steam<br><strong>Status:</strong> In development</p><a class="btn outline" href="/#games">← Back to all games</a></div></div></section></main><footer><div class="wrap foot"><span>© 2026 CIA inc. · Made in Armenia</span><div class="footlinks"><a href="/privacy.html">Privacy Policy</a><a href="mailto:flashbaracademia@gmail.com">Contact</a></div></div></footer><script>
+(function(){
+  const key='cia-inc-theme';
+  const saved=localStorage.getItem(key);
+  const initial=saved==='light'?'light':'dark';
+  document.documentElement.dataset.theme=initial;
+  function sync(){
+    const light=document.documentElement.dataset.theme==='light';
+    const button=document.querySelector('.theme-toggle');
+    if(button){button.textContent=light?'☾ Dark':'☀ Light';button.setAttribute('aria-label',light?'Switch to dark theme':'Switch to light theme');button.setAttribute('aria-pressed',String(light));}
+    const meta=document.querySelector('meta[name="theme-color"]');
+    if(meta)meta.content=light?'#f4f6f8':'#080b10';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    sync();
+    const button=document.querySelector('.theme-toggle');
+    if(button)button.addEventListener('click',function(){
+      const next=document.documentElement.dataset.theme==='light'?'dark':'light';
+      document.documentElement.dataset.theme=next;
+      localStorage.setItem(key,next);
+      sync();
+    });
+  });
+})();
+</script></body></html>
