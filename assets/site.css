@@ -47,3 +47,10 @@
 .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .trailer-link{display:inline-flex;margin-top:16px;font-size:13px;font-weight:750;color:var(--blue);border-bottom:1px solid var(--blue);padding-bottom:5px}
 [data-theme="light"] .video-frame{box-shadow:0 18px 45px #26374620}
+
+/* Original studio artwork */
+.art img{display:block;position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
+.art:has(img):before,.art:has(img):after{display:none}
+.game-preview{margin:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.game-preview img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.game-preview figcaption{padding:10px 14px;color:var(--muted);font-size:12px}
